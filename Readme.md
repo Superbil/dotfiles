@@ -2,7 +2,7 @@
 
 this is my dotfiles
 
-I use stow to mangaer it.
+I use stow to manager it.
 
 ## Use way ##
 
