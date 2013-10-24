@@ -61,7 +61,6 @@ local pathdirs
 pathdirs=(
     /usr/local/bin              # homebrew
     /usr/local/sbin             # homebrew
-    /usr/local/share/python     # homebrew's python
     /usr/local/opt/ruby/bin     # homebrew's ruby
     $HOME/bin
     # $HOME/.rvm/bin              # RVM

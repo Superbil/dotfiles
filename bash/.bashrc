@@ -1,8 +1,3 @@
-# export PATH=/usr/local/sbin:/usr/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/libexec
-
-# homebrew's python
-export PATH=/usr/local/share/python:$PATH
-
 export CLICOLOR=1
 export LSCOLORS=gxfxaxdxcxegedabagacad
 
