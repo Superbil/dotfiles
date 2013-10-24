@@ -6,7 +6,7 @@ I use stow to manager it.
 
 ## Use way ##
 
-`stow ~t ~ <pakcage_name>`
+`$ stow -t ~ <pakcage_name>`
 
 alwasy set target is HOME
 
