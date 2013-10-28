@@ -17,7 +17,6 @@ alias iq="ipython qtconsole &"
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias ec=$EDITOR
 
-alias rxxx='open -a VLC "$(find /Volumes/XXX/ -type f -depth 2 -name "*.avi" -or -name "*.wmv" -or -name "*.mp4" -or -name "*.rmvb" -or -name "*.mkv" | sort --random-sort | head -n 1)"'
 
 # alias of homebrew
 alias b='brew'
@@ -30,6 +29,10 @@ alias bh='brew home'
 
 # caff always use yes to send mail
 alias caff='caff -m yes'
+
+if [[ -e $HOME/.zshrc-superbil ]]; then
+    source $HOME/.zshrc-superbil
+fi
 
 if [[ "$(uname -s)" =~ "(NetBSD|Darwin)" ]]; then
     # On NetBSD and OS X, test if "gls" (GNU ls) is installed (this one supports colors);
