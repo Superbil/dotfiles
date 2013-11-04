@@ -17,7 +17,6 @@ alias iq="ipython qtconsole &"
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias ec=$EDITOR
 
-
 # alias of homebrew
 alias b='brew'
 alias be='brew edit'
@@ -66,7 +65,6 @@ pathdirs=(
     /usr/local/sbin             # homebrew
     /usr/local/opt/ruby/bin     # homebrew's ruby
     $HOME/bin
-    # $HOME/.rvm/bin              # RVM
     /usr/local/share/npm/bin    # NPM
 )
 
@@ -86,7 +84,12 @@ manpath=(/usr/share/man /usr/local/share/man $manpath)
 # [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 # python path
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+if [[ -x $(which brew) ]]; then
+    export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
+else
+    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+fi
+export PYTHONSTARTUP="~/.pythonrc"
 
 ## Emacs configure
 EC_ARGS="emacsclient -c"
