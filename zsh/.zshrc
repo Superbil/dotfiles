@@ -13,9 +13,10 @@ ZSH_THEME="gentoo"
 COMPLETION_WAITING_DOTS="true"
 
 alias iq="ipython qtconsole &"
+if [[ "$(uname -s)" =~ "(Darwin)" ]]; then
 # fix over write app in "open With..." menu
-alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
-alias ec=$EDITOR
+    alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+fi
 
 # alias of homebrew
 alias b='brew'
