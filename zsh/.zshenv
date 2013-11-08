@@ -34,6 +34,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # setup local env
-if [[ -e $HOME/.zshenv.superbil ]]; then
-    source $HOME/.zshenv.superbil
+if [[ -e $HOME/.zshenv-superbil ]]; then
+    source $HOME/.zshenv-superbil
 fi
