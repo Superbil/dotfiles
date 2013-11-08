@@ -29,10 +29,6 @@ alias bh='brew home'
 # caff always use yes to send mail
 alias caff='caff -m yes'
 
-if [[ -e $HOME/.zshrc-superbil ]]; then
-    source $HOME/.zshrc-superbil
-fi
-
 if [[ "$(uname -s)" =~ "(NetBSD|Darwin)" ]]; then
     # On NetBSD and OS X, test if "gls" (GNU ls) is installed (this one supports colors);
     # otherwise, leave ls as is, because NetBSD's ls doesn't support -G

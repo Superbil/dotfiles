@@ -37,3 +37,7 @@ export PYTHONSTARTUP="~/.pythonrc"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
+
+if [[ -e $HOME/.zshenv.superbil ]]; then
+    source $HOME/.zshenv.superbil
+fi
