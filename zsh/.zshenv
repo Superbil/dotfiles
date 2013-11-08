@@ -26,12 +26,14 @@ if [[ -x '/usr/local/bin/emacsclient' ]]; then
     fi
 fi
 
+# python setup
 export PYTHONSTARTUP="~/.pythonrc"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
+# setup local env
 if [[ -e $HOME/.zshenv.superbil ]]; then
     source $HOME/.zshenv.superbil
 fi
