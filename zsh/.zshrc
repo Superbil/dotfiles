@@ -62,49 +62,10 @@ plugins=(
     vagrant
 )
 
-# Create a list of directories to add to the path
-local pathdirs
-pathdirs=(
-    /usr/local/bin              # homebrew
-    /usr/local/sbin             # homebrew
-    /usr/local/opt/ruby/bin     # homebrew's ruby
-    $HOME/bin
-    /usr/local/share/npm/bin    # NPM
-)
-
-# Add directories which exist to the path
-for dir ($pathdirs) {
-    if [[ -d $dir ]]; then
-        path=($dir $path)
-    fi
-}
-
 source $ZSH/oh-my-zsh.sh
 
 # Set Manpath for homebrew
 manpath=(/usr/share/man /usr/local/share/man $manpath)
-
-# # python brew
-# [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
-
-# python path
-if [[ -x $(which brew) ]]; then
-    export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
-else
-    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-fi
-export PYTHONSTARTUP="~/.pythonrc"
-
-## Emacs configure
-if [[ -x '/usr/local/bin/emacsclient' ]]; then
-    EC_ARGS="/usr/local/bin/emacsclient -c"
-fi
-
-if [[ -z $SSH_CLIENT ]]; then
-    export EDITOR="$EC_ARGS"
-else
-    export EDITOR="$EC_ARGS -t"
-fi
 
 # setup prompt_char to a burger, yummy
 # don't let it work inside emacs
