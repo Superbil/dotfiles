@@ -42,17 +42,21 @@ else
 fi
 
 plugins=(
+    autojump
     brew
     git
     git-flow
     gnu-utils
     history
     mercurial
+    node
+    npm
     osx
     pip
     python
     rake
     ruby
+    sublime
     svn
     urltools
     vagrant
