@@ -92,7 +92,10 @@ fi
 export PYTHONSTARTUP="~/.pythonrc"
 
 ## Emacs configure
-EC_ARGS="emacsclient -c"
+if [[ -x '/usr/local/bin/emacsclient' ]]; then
+    EC_ARGS="/usr/local/bin/emacsclient -c"
+fi
+
 if [[ -z $SSH_CLIENT ]]; then
     export EDITOR="$EC_ARGS"
 else
