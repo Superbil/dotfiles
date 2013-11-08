@@ -26,12 +26,6 @@ if [[ -x '/usr/local/bin/emacsclient' ]]; then
     fi
 fi
 
-# python path
-if [[ -x $(which brew) ]]; then
-    export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
-else
-    export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-fi
 export PYTHONSTARTUP="~/.pythonrc"
 
 # pyenv
