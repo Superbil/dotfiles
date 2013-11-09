@@ -27,7 +27,7 @@ if [[ -x '/usr/local/bin/emacsclient' ]]; then
 fi
 
 # python setup
-export PYTHONSTARTUP="~/.pythonrc"
+export PYTHONSTARTUP=$HOME/.pythonrc
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
