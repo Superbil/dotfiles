@@ -30,14 +30,6 @@ alias bh='brew home'
 # caff always use yes to send mail
 alias caff='caff -m yes'
 
-if [[ "$(uname -s)" =~ "(NetBSD|Darwin)" ]]; then
-    # On NetBSD and OS X, test if "gls" (GNU ls) is installed (this one supports colors);
-    # otherwise, leave ls as is, because NetBSD's ls doesn't support -G
-    gls --color -d . &>/dev/null 2>&1 && alias ls='gls --color=tty'
-else
-    ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
-fi
-
 plugins=(
     autojump
     brew
@@ -61,8 +53,21 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# setup alias to eshell
+if [[ -d $HOME/.eshell ]]; then
+    alias | sed -E "s/^([^=]+)=(.*)$/alias \1 \2 \$*/g; s/'\\\''/'/g;" | sort | uniq > ~/.eshell/alias
+fi
+
 # Set Manpath for homebrew
 manpath=(/usr/share/man /usr/local/share/man $manpath)
+
+if [[ "$(uname -s)" =~ "(NetBSD|Darwin)" ]]; then
+    # On NetBSD and OS X, test if "gls" (GNU ls) is installed (this one supports colors);
+    # otherwise, leave ls as is, because NetBSD's ls doesn't support -G
+    gls --color -d . &>/dev/null 2>&1 && alias ls='gls --color=tty'
+else
+    ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+fi
 
 # setup prompt_char to a burger, yummy
 # don't let it work inside emacs
