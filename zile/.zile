@@ -78,4 +78,4 @@
 (setq backup-directory nil)
 
 ; To be able to M-x without meta
-(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-x\RET" 'execute-extended-command)
