@@ -3,18 +3,15 @@
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gentoo"
-# if [[ -z "$INSIDE_EMACS" ]]; then
-#     ZSH_THEME="bira"
-# else
-#     ZSH_THEME="gentoo"
-# fi
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-alias iq="ipython qtconsole &"
+# quick use ipython qtconsole
+[[ -x $(which ipython) ]] && alias iq="ipython qtconsole &"
+
 if [[ "$(uname -s)" =~ "(Darwin)" ]]; then
-# fix over write app in "open With..." menu
+    # fix over write app in "open With..." menu
     alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 fi
 
@@ -72,7 +69,7 @@ fi
 # don't let it work inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     function prompt_char {
-    if [ $UID -eq 0 ]; then echo "#"; else echo "🍔 "; fi
+        if [ $UID -eq 0 ]; then echo "#"; else echo "🍔 "; fi
     }
 fi
 
