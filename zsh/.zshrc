@@ -4,28 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gentoo"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-
-# quick use ipython qtconsole
-[[ -x $(which ipython) ]] && alias iq="ipython qtconsole &"
-
-if [[ "$(uname -s)" =~ "(Darwin)" ]]; then
-    # fix over write app in "open With..." menu
-    alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
-fi
-
-# alias of homebrew
-alias b='brew'
-alias be='brew edit'
-alias bs='brew search'
-alias bi='brew install --use-llvm'
-alias bin='brew info'
-alias bui='brew uninstall'
-alias bh='brew home'
-
-# caff always use yes to send mail
-alias caff='caff -m yes'
 
 plugins=(
     autojump
