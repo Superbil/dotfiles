@@ -18,6 +18,7 @@ plugins=(
     npm
     osx
     pip
+    pyenv
     python
     rake
     ruby
