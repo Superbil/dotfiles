@@ -1,10 +1,11 @@
 ## Emacs configure
-if [[ -x '/usr/local/bin/emacsclient' ]]; then
-    EC_ARGS="/usr/local/bin/emacsclient -c"
+local ec_path=/usr/local/bin/emacsclient
+if [[ -x $ec_path ]]; then
+    local EC_ARGS="${ec_path} -c"
     if [[ -z $SSH_CLIENT ]]; then
-        export EDITOR="$EC_ARGS"
+        export EDITOR="${EC_ARGS}"
     else
-        export EDITOR="$EC_ARGS -t"
+        export EDITOR="${EC_ARGS} -t"
     fi
 fi
 
