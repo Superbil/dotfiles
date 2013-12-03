@@ -17,11 +17,6 @@ if [[ -x pyenv ]]; then
     eval "$(pyenv init -)"
 fi
 
-# setup local env
-if [[ -e $HOME/.zshenv-superbil ]]; then
-    source $HOME/.zshenv-superbil
-fi
-
 # Create a list of directories to add to the path
 local pathdirs
 pathdirs=(
@@ -39,3 +34,8 @@ for dir ($pathdirs) {
         path=($dir $path)
     fi
 }
+
+# setup local env
+if [[ -e $HOME/.zshenv-superbil ]]; then
+    source $HOME/.zshenv-superbil
+fi
