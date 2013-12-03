@@ -13,8 +13,7 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-if [[ -x pyenv ]]; then
+if [[ -x $(which pyenv) ]]; then
     eval "$(pyenv init -)"
 fi
 
