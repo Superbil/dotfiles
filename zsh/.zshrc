@@ -6,35 +6,56 @@ ZSH_THEME="gentoo"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(
-    brew
+base_plugins=(
     colorize
     common-aliases
     copydir
     copyfile
-    emoji-clock
-    forklift
-    gem
     git
     git-flow-avh
     gnu-utils
     history
-    node
-    npm
-    osx
+    svn
+    urltools
+    z
+)
+
+langs_plugins=(
+    # ruby
+    gem
+    rake
+    ruby
+    vagrant
+    # python
     pip
-    pod
     pyenv
     pylint
     python
-    rake
-    ruby
-    svn
-    urltools
-    vagrant
-    xcode
-    z
+    # javascript
+    node
+    npm
 )
+
+darwin_plugins=(
+    # homebrew
+    brew
+    # show time at prompt_char
+    emoji-clock
+    # Forklift.app
+    forklift
+    # useful for OS X
+    osx
+    # cocoapods
+    pod
+    # quickly to open project
+    xcode
+)
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    plugins=($base_plugins $langs_plugins $darwin_plugins)
+else
+    plugins=($base_plugins $langs_plugins)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
