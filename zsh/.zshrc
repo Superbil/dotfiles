@@ -10,7 +10,7 @@ plugins=(
     autojump
     brew
     git
-    git-flow
+    git-flow-avh
     gnu-utils
     history
     mercurial
