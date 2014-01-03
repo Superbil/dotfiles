@@ -19,7 +19,6 @@ plugins=(
     git-flow-avh
     gnu-utils
     history
-    mercurial
     node
     npm
     osx
