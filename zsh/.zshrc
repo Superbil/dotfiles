@@ -7,7 +7,6 @@ ZSH_THEME="gentoo"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-    autojump
     brew
     colorize
     common-aliases
@@ -35,6 +34,7 @@ plugins=(
     urltools
     vagrant
     xcode
+    z
 )
 
 source $ZSH/oh-my-zsh.sh
