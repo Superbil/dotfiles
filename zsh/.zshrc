@@ -9,6 +9,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     autojump
     brew
+    emoji-clock
     git
     git-flow-avh
     gnu-utils
@@ -49,7 +50,7 @@ fi
 # don't let it work inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     function prompt_char {
-        if [ $UID -eq 0 ]; then echo "#"; else echo "🍔 "; fi
+        if [ $UID -eq 0 ]; then echo "#"; else echo "$(emoji-clock) "; fi
     }
 fi
 
