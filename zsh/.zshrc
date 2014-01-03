@@ -9,7 +9,13 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     autojump
     brew
+    colorize
+    common-aliases
+    copydir
+    copyfile
     emoji-clock
+    forklift
+    gem
     git
     git-flow-avh
     gnu-utils
@@ -19,13 +25,16 @@ plugins=(
     npm
     osx
     pip
+    pod
     pyenv
+    pylint
     python
     rake
     ruby
     svn
     urltools
     vagrant
+    xcode
 )
 
 source $ZSH/oh-my-zsh.sh
