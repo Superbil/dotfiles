@@ -83,8 +83,4 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-function wopen {
-    open ${PWD##*/}.xcworkspace
-} # open Xcode workspace
-
 autoload zmvq
