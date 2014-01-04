@@ -82,7 +82,7 @@ if [[ -z "$INSIDE_EMACS" ]]; then
         if [ $UID -eq 0 ]; then
             echo "#";
         else
-            if [[ -t $emoji-clock ]]; then
+            if [[ "$(uname -s)" == "Darwin" ]]; then
                 echo "$(emoji-clock) ";
             else
                 echo "$"
