@@ -79,7 +79,15 @@ fi
 # don't let it work inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     function prompt_char {
-        if [ $UID -eq 0 ]; then echo "#"; else echo "$(emoji-clock) "; fi
+        if [ $UID -eq 0 ]; then
+            echo "#";
+        else
+            if [[ -t $emoji-clock ]]; then
+                echo "$(emoji-clock) ";
+            else
+                echo "$"
+            fi
+        fi
     }
 fi
 
