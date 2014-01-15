@@ -25,6 +25,7 @@ langs_plugins=(
     gem
     rake
     ruby
+    rvm
     vagrant
     # python
     pip
