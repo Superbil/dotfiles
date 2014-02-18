@@ -22,6 +22,7 @@
         quotepath = false
         deltaBaseCacheLimit = 1G
         excludesfile = ~/.gitignore
+	ignorecase = false
 [alias]
         br = branch
         co = checkout
