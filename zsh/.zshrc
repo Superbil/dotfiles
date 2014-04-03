@@ -87,4 +87,10 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
+# while had $HOME/perl5/lib/perl5 eval it
+# that can install cpan without sudo
+if [[ -d $HOME/perl5/lib/perl5 ]]; then
+    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+fi
+
 autoload zmvq
