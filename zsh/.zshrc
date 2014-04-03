@@ -60,11 +60,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# setup alias to eshell
-if [[ -d $HOME/.eshell ]]; then
-    alias | sed -E "s/^([^=]+)='*([^']+)'*$/alias \1 \2 \$*/g; s/'\\\''/'/g;" | sort | uniq > ~/.eshell/alias
-fi
-
 # Set Manpath for homebrew
 manpath=(/usr/share/man /usr/local/share/man $manpath)
 
