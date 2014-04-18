@@ -8,7 +8,6 @@ COMPLETION_WAITING_DOTS="true"
 
 base_plugins=(
     colorize
-    common-aliases
     copydir
     copyfile
     git
