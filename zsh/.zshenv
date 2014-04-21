@@ -13,9 +13,7 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonrc
 
 # pyenv
-if [[ -x $(which pyenv) ]]; then
-    eval "$(pyenv init -)"
-fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Create a list of directories to add to the path
 local pathdirs
@@ -24,7 +22,6 @@ pathdirs=(
     /usr/local/sbin             # homebrew
     /usr/local/opt/ruby/bin     # homebrew's ruby
     /usr/local/share/npm/bin    # NPM
-    $PYENV_ROOT/bin
     $HOME/bin
 )
 
