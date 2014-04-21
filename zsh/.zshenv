@@ -20,8 +20,8 @@ local pathdirs
 pathdirs=(
     /usr/local/bin              # homebrew
     /usr/local/sbin             # homebrew
-    /usr/local/opt/ruby/bin     # homebrew's ruby
     /usr/local/share/npm/bin    # NPM
+    $HOME/.rvm/bin              # RVM
     $HOME/bin
 )
 
@@ -31,12 +31,6 @@ for dir ($pathdirs) {
         path=($dir $path)
     fi
 }
-
-# Add RVM to PATH for scripting
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-    PATH=$PATH:$HOME/.rvm/bin
-    source $HOME/.rvm/scripts/rvm
-fi
 
 # setup local env
 if [[ -e $HOME/.zshenv-superbil ]]; then
