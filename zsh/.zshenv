@@ -20,7 +20,6 @@ local pathdirs
 pathdirs=(
     /usr/local/bin              # homebrew
     /usr/local/sbin             # homebrew
-    /usr/local/share/npm/bin    # NPM
     $HOME/.rvm/bin              # RVM
     $HOME/bin
 )
