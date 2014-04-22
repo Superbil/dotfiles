@@ -1,6 +1,11 @@
 [core]
         pager = less -R
         editor = emacsclient -c -a "vim"
+        whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+        quotepath = false
+        deltaBaseCacheLimit = 1G
+        excludesfile = ~/.gitignore
+	ignorecase = false
 [color]
         ui = auto
 [color "branch"]
@@ -17,23 +22,17 @@
         added = yellow
         changed = green
         untracked = cyan
-[core]
-        whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-        quotepath = false
-        deltaBaseCacheLimit = 1G
-        excludesfile = ~/.gitignore
-	ignorecase = false
 [alias]
         br = branch
         co = checkout
-        ci = commit
+        cm = commit
         df = diff
-        st = status
+        st = status -sb
         ss = submodule foreach 'git status'
         fe = fetch
         rb = rebase
         ls = ls-files
-        # SVN-compatible versions of commands
+        ## SVN-compatible versions of commands
         # "foo-svn" is used here instead of "svn-foo" so that it's suggested when people tab-complete "git fo..."
         # cherry-pick-svn = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick -e
         # branch-svn = svn branch
@@ -70,7 +69,7 @@
         fr = flow release
         fh = flow hotfix
         fs = flow support
-        fv = flow versio
+        fv = flow version
 [branch]
         autosetupmerge = true
         trustExitCode = true
