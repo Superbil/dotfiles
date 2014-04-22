@@ -1,0 +1,206 @@
+# brew tap
+tap nwoolls/xgminer
+tap phinze/cask
+
+# brew install
+install ack
+install android-sdk
+install apple-gcc42
+install ascii
+install aspell
+install atk
+install autoconf
+install autogen
+install automake
+install autossh
+install bazaar
+install bdw-gc
+install boost
+install boot2docker
+install brew-gem
+install c-ares
+install cabextract
+install cairo
+install class-dump
+install clens
+install cloc
+install cmake
+install coreutils
+install cpanminus
+install cscope
+install ctags
+install curl   --with-ares
+install d-bus
+install devtodo
+install dialog
+install dirmngr
+install docker
+install doxygen
+install editorconfig
+#install emacs   --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
+install emacs-clang-complete-async
+install exiftool
+install flac
+install fontconfig
+install fossil
+install freetype
+install fribidi
+install fuse4x
+install fuse4x-kext
+install gdb
+install gdbm
+install gettext
+install ghc
+install ghostscript
+install git
+install git-extras
+install git-flow-avh
+install glib
+install gmp
+install gnome-common
+install gnu-getopt
+install gnupg
+install gnupg2
+install gnutls
+install go
+install gobject-introspection
+install gpatch
+install gpg-agent
+install graphviz   --with-bindings  --with-app  --with-freetype
+install grc
+install growly
+install guile
+install harfbuzz
+install hg-flow
+install hub
+install icu4c
+install ilmbase
+install imagemagick   --with-libtiff  --with-openexr  --with-x11
+install intltool
+install ircii
+install isl
+install jansson
+install jasper
+install jbig2dec
+install jenkins
+install jpeg
+install jython
+install lame
+install lesspipe
+install libassuan
+install libevent
+install libffi
+install libgcrypt
+install libgpg-error
+install libksba
+install libmicrohttpd
+install libmpc
+install libogg
+install libotr
+install libpng
+install libssh2
+install libtasn1
+install libtiff
+install libtool
+install libunistring
+install libusb
+install libusb-compat
+install libvorbis
+install libxml2
+install libyaml
+install little-cms2
+install llvm   --rtti  --all-targets  --with-clang
+install lynx
+install lzma
+install lzo
+install markdown
+install mg
+install mpfr
+install mtr
+install mutt
+install nettle
+install node
+install nu
+install numpy
+install opencv
+install openexr
+install openssl
+install ossp-uuid
+install p11-kit
+install pcre
+install pdfcrack
+install pil
+install pinentry
+install pixman
+install pkg-config
+install portmidi
+install postgresql   --no-tcl
+install protobuf
+install protobuf-objc
+install pth
+install putty
+install pyenv
+install pygame
+install python
+install python3
+install qprint
+install qt
+install qt5
+install readline
+install repo
+install sbt
+install scala
+install scipy
+install scons
+install sdl
+install sdl_image
+install sdl_mixer
+install sdl_ttf
+install shiboken
+install signing-party
+install sip
+install smlnj
+install smpeg
+install sphinx
+install sqlite
+install ssh-copy-id
+install stow
+install suite-sparse
+install swig
+install tbb
+install tcl-tk
+install texi2html
+install the_silver_searcher
+install tig
+install tmux
+install tokyo-cabinet
+install tor
+install transmission
+install tree
+install ttyrec
+install ttytter
+install uncrustify
+install uthash
+install webp
+install wget
+install wxmac
+install x264
+install xctool
+install xvid
+install xz
+install yasm
+install youtube-dl
+install z
+install zsh
+
+# failded
+#Error: No available formula for gdb
+#Error: No available formula for gpatch
+#Error: No available formula for numpy
+#Error: No available formula for opencv
+#Error: No available formula for protobuf-objc
+#Error: No available formula for pygame
+#Error: No available formula for scipy
+#Error: No available formula for smpeg
+#Error: No available formula for suite-sparse
+#Error: No available formula for tcl-tk
