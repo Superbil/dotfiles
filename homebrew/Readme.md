@@ -3,11 +3,11 @@
 * backup homebrew
 
 ````
-    ./backup_homebrew.sh > Brewfile
+./backup_homebrew.sh > Brewfile
 ````
 
 * restore homebrew
 
 ````
-    brew bundle
+brew bundle
 ````
