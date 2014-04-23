@@ -1,5 +1,4 @@
 # brew tap
-tap nwoolls/xgminer
 tap phinze/cask
 
 # brew install
