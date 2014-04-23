@@ -28,7 +28,6 @@ install cloc
 install cmake
 install cpanminus
 install cscope
-install ctags
 install curl   --with-ares
 install d-bus
 install devtodo
