@@ -1,16 +1,17 @@
-# set up brew cask
+## set up brew cask
 tap phinze/homebrew-cask
 install brew-cask
 tap caskroom/versions
 
-# brew installs always use
+## brew installs always use
 install git
 install git-flow-avh
 install gnupg
 install node
 install z
 install zsh
-# brew installs other need
+
+## brew installs other need
 install android-sdk
 install ascii
 install aspell
@@ -80,7 +81,6 @@ install p11-kit
 install pcre
 install pdfcrack
 install portmidi
-install postgresql   --no-tcl
 install putty
 install pyenv
 install qprint
@@ -121,14 +121,15 @@ install xvid
 install xz
 install yasm
 install youtube-dl
-# brew install custom
+
+## brew install custom
 install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf-objc.rb
 
-# editor
+## editor
 cask install xquartz
 install emacs   --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
 
-# brew cask install install apps
+## brew cask install install apps
 cask install Handbrake
 cask install ImageAlpha
 cask install KeyRemap4MacBook
@@ -174,25 +175,24 @@ cask install wedge
 cask install Welly
 cask install YoruFukurou
 
-# brew cask install dev tools
-cask install dash
-cask install emacs
-cask install sourcetree
-cask install sublime-text3
-cask install virtualbox
-cask install postgres
-
-cask install anvil
-cask install crashlytics
-cask install sqlite-database-browser
+## brew cask install dev tools
 cask install Slate
 cask install Typinator
+cask install anvil
+cask install crashlytics
+cask install dash
+cask install emacs
 cask install iFunBox
+cask install postgres
+cask install sourcetree
+cask install sqlite-database-browser
+cask install sublime-text3
+cask install virtualbox
 
-# brew cask install browsers
+## brew cask install browsers
 cask install firefox
 cask install google-chrome
 cask install opera-next
 
-#link some thing
+## link some thing
 cask alfred link
