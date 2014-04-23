@@ -1,30 +1,24 @@
-# brew tap
-tap phinze/cask
+# set up brew cask
+tap phinze/homebrew-cask
+install brew-cask
+tap caskroom/versions
 
-# brew install
-install ack
+# brew installs
 install android-sdk
-install apple-gcc42
 install ascii
 install aspell
 install atk
-install autoconf
-install autogen
-install automake
 install autossh
 install bazaar
 install bdw-gc
 install boost
-install boot2docker
 install brew-gem
-install c-ares
 install cabextract
 install cairo
 install class-dump
 install clens
 install cloc
 install cmake
-install coreutils
 install cpanminus
 install cscope
 install ctags
@@ -33,37 +27,22 @@ install d-bus
 install devtodo
 install dialog
 install dirmngr
-install docker
 install doxygen
 install editorconfig
-#install emacs   --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
 install emacs-clang-complete-async
 install exiftool
 install flac
-install fontconfig
 install fossil
-install freetype
 install fribidi
-install fuse4x
-install fuse4x-kext
-install gdb
-install gdbm
-install gettext
 install ghc
 install ghostscript
 install git
 install git-extras
 install git-flow-avh
-install glib
-install gmp
 install gnome-common
 install gnu-getopt
 install gnupg
 install gnupg2
-install gnutls
-install go
-install gobject-introspection
-install gpatch
 install gpg-agent
 install graphviz   --with-bindings  --with-app  --with-freetype
 install grc
@@ -80,108 +59,60 @@ install ircii
 install isl
 install jansson
 install jasper
-install jbig2dec
 install jenkins
-install jpeg
-install jython
 install lame
 install lesspipe
-install libassuan
-install libevent
-install libffi
-install libgcrypt
-install libgpg-error
-install libksba
-install libmicrohttpd
-install libmpc
-install libogg
-install libotr
-install libpng
-install libssh2
-install libtasn1
-install libtiff
-install libtool
-install libunistring
-install libusb
-install libusb-compat
-install libvorbis
-install libxml2
-install libyaml
-install little-cms2
 install llvm   --rtti  --all-targets  --with-clang
 install lynx
-install lzma
 install lzo
 install markdown
 install mg
 install mpfr
 install mtr
 install mutt
-install nettle
 install node
-install nu
-install numpy
-install opencv
+# install nu
 install openexr
 install openssl
 install ossp-uuid
 install p11-kit
 install pcre
 install pdfcrack
-install pil
-install pinentry
-install pixman
-install pkg-config
 install portmidi
 install postgresql   --no-tcl
-install protobuf
-install protobuf-objc
-install pth
 install putty
 install pyenv
-install pygame
-install python
-install python3
 install qprint
 install qt
 install qt5
-install readline
 install repo
 install sbt
-install scala
-install scipy
 install scons
 install sdl
 install sdl_image
 install sdl_mixer
 install sdl_ttf
 install shiboken
-install signing-party
+# install signing-party --with-rename-pgpring
 install sip
 install smlnj
-install smpeg
 install sphinx
 install sqlite
 install ssh-copy-id
 install stow
-install suite-sparse
 install swig
 install tbb
-install tcl-tk
 install texi2html
 install the_silver_searcher
 install tig
 install tmux
 install tokyo-cabinet
-install tor
 install transmission
 install tree
 install ttyrec
 install ttytter
 install uncrustify
-install uthash
 install webp
-install wget
 install wxmac
 install x264
 install xctool
@@ -192,14 +123,78 @@ install youtube-dl
 install z
 install zsh
 
-# failded
-#Error: No available formula for gdb
-#Error: No available formula for gpatch
-#Error: No available formula for numpy
-#Error: No available formula for opencv
-#Error: No available formula for protobuf-objc
-#Error: No available formula for pygame
-#Error: No available formula for scipy
-#Error: No available formula for smpeg
-#Error: No available formula for suite-sparse
-#Error: No available formula for tcl-tk
+install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf-objc.rb
+
+# editor
+cask install xquartz
+install emacs   --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
+
+# brew cask install install apps
+cask install Handbrake
+cask install ImageAlpha
+cask install KeyRemap4MacBook
+cask install Knock
+cask install LICEcap
+cask install Leap-Motion
+cask install MultiBit
+cask install Nally
+cask install Notational-Velocity
+cask install Picasa
+cask install Sparrow
+cask install adium
+cask install airserver
+cask install alfred
+cask install arduino
+cask install audacity
+cask install bettertouchtool
+cask install bitcoin
+cask install charles
+cask install clipmenu
+cask install colloquy
+cask install controllermate
+cask install cyberduck
+cask install dictunifier
+cask install divvy
+cask install dropbox
+cask install evernote
+cask install ForkLift
+cask install freemind
+cask install Flux
+cask install genymotion
+cask install google-drive
+cask install google-earth
+cask install grandperspective
+cask install macmoney
+cask install messenger-for-telegram
+cask install OpenOffice
+cask install skype
+cask install spotify
+cask install torBrowserBundle
+cask install uTorrent
+cask install VLC
+cask install wedge
+cask install Welly
+cask install YoruFukurou
+
+# brew cask install dev tools
+cask install dash
+cask install emacs
+cask install sourcetree
+cask install sublime-text3
+cask install virtualbox
+cask install postgres
+
+cask install anvil
+cask install crashlytics
+cask install sqlite-database-browser
+cask install Slate
+cask install Typinator
+cask install iFunBox
+
+# brew cask install browsers
+cask install firefox
+cask install google-chrome
+cask install opera-next
+
+#link some thing
+cask alfred link
