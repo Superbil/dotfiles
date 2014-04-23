@@ -52,6 +52,7 @@ brew bundle
 - Droplr
 - Duplicate Cleaner For iPhoto
 - Ensoul Contacts
+- ForkLift
 - Found
 - Free Ringtone Maker
 - GarageBand

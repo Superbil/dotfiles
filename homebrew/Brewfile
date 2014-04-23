@@ -157,7 +157,6 @@ cask install dictunifier
 cask install divvy
 cask install dropbox
 cask install evernote
-cask install ForkLift
 cask install freemind
 cask install Flux
 cask install genymotion
