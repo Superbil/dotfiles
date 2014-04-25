@@ -127,7 +127,7 @@ install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf
 
 ## editor
 cask install xquartz
-install emacs   --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
+install emacs  --HEAD  --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
 
 ## brew cask install install apps
 cask install Handbrake
