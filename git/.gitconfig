@@ -5,7 +5,7 @@
         quotepath = false
         deltaBaseCacheLimit = 1G
         excludesfile = ~/.gitignore
-	ignorecase = false
+        ignorecase = false
 [color]
         ui = auto
 [color "branch"]
@@ -32,6 +32,7 @@
         fe = fetch
         rb = rebase
         ls = ls-files
+        cms = commit --amend --no-edit --gpg-sign
         ## SVN-compatible versions of commands
         # "foo-svn" is used here instead of "svn-foo" so that it's suggested when people tab-complete "git fo..."
         # cherry-pick-svn = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick -e
