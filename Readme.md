@@ -6,9 +6,17 @@ I use stow to manager it.
 
 ## Use way ##
 
-`$ stow -t ~ <pakcage_name>`
+`$ stow -t ~ <package_name>`
 
 alwasy set target is HOME
+
+`package_name` is an folder
+
+## Delete package
+
+`$ stow -t -D <package_name>`
+
+`package_name` is an folder
 
 ## How to use stow ##
 
