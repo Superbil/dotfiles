@@ -6,7 +6,15 @@ I use stow to manager it.
 
 ## Use way ##
 
-`$ stow -t ~ <package_name>`
+* install script
+
+``` shell
+install_dotfile.sh <package_name_1> ... <package_name_n>
+```
+
+* manual install
+
+`stow -t ~ <package_name>`
 
 alwasy set target is HOME
 
