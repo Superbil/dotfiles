@@ -1,0 +1,114 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+
+# Monitor Aliases
+alias mon-iMac      2560x1440
+alias cell-X        11
+alias cell-Y        6
+alias mon-Samsung24 1920x1080
+
+# Position Aliases
+alias oneCell-X screenSizeX/${cell-X}
+alias oneCell-Y screenSizeY/${cell-Y}
+alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                ${oneCell-X}*7;screenSizeY      ${mon-iMac}
+alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-iMac}
+alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
+alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
+alias 1-left2   move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY      ${mon-iMac}
+alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
+alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
+alias 1-mid     move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-iMac}
+alias 2-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-Samsung24}
+alias 2-left    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-Samsung24}
+alias 2-right   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-Samsung24}
+
+# 2 Monitor layout
+layout 2monitors 'iTerm':SORT_TITLE                       ${2-full} | ${2-left} | ${2-right}
+# layout 2monitors 'Google Chrome'                          ${1-main} | ${2-full}
+layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
+layout 2monitors 'Firefox':REPEAT                         ${1-main}
+layout 2monitors 'Xcode':REPEAT                           ${1-main}
+layout 2monitors 'Emacs':REPEAT                           ${1-main}
+layout 2monitors 'YoruFukurou':REPEAT                     ${1-left2}
+layout 2monitors 'Wedge':REPEAT                           ${1-chat}
+layout 2monitors 'Spotify':REPEAT                         ${2-full}
+
+# 1 Monitor layout
+layout 1monitor 'iTerm':SORT_TITLE,REPEAT                ${1-main}
+layout 1monitor 'Google Chrome':REPEAT                   ${1-main}
+layout 1monitor 'Emacs':REPEAT                           ${1-main}
+layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
+layout 1monitor 'Firefox':REPEAT                         ${1-main}
+layout 1monitor 'Xcode':REPEAT                           ${1-main}
+layout 1monitor 'Spotify':REPEAT                         ${1-main}
+
+# Default Layouts
+default 2monitors resolutions:${mon-iMac};${mon-Samsung24}
+default 1monitor  resolutions:${mon-iMac}
+
+# Basic location Bindings
+bind u:ctrl;alt ${1-chat-t}
+bind j:ctrl;alt ${1-chat}
+bind m:ctrl;alt ${1-chat-b}
+
+bind i:ctrl;alt ${1-left2-t}
+bind k:ctrl;alt ${1-left2}
+bind ,:ctrl;alt ${1-left2-b}
+
+bind o:ctrl;alt ${2-left}
+bind l:ctrl;alt ${2-right}
+bind .:ctrl;alt ${2-full}
+
+bind ;:ctrl;alt ${1-main}
+bind p:ctrl;alt ${1-mid}
+
+# Resize Bindings
+# NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
+bind right:ctrl;cmd resize +10% +0
+bind left:ctrl;cmd  resize -10% +0
+bind up:ctrl;cmd    resize +0   -10%
+bind down:ctrl;cmd  resize +0   +10%
+
+# Push Bindings
+# NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
+bind right:ctrl;shift;cmd push right bar-resize:screenSizeX/2
+bind left:ctrl;shift;cmd  push left  bar-resize:screenSizeX/2
+bind up:ctrl;shift;cmd    push up    bar-resize:screenSizeY/2
+bind down:ctrl;shift;cmd  push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+# NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
+bind right:ctrl;alt nudge +10% +0
+bind left:ctrl;alt  nudge -10% +0
+bind up:ctrl;alt    nudge +0   -10%
+bind down:ctrl;alt  nudge +0   +10%
+
+# Throw Bindings
+# NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
+bind right:ctrl;shift;alt throw right resize
+bind left:ctrl;shift;alt  throw left  resize
+bind up:ctrl;shift;alt    throw up    resize
+bind down:ctrl;shift;alt  throw down  resize
+
+# Layout Bindings
+#bind padEnter:ctrl layout 3monitors
+
+# Window Hints
+bind esc:cmd hint
+
+# Switch currently doesn't work well so I'm commenting it out until I fix it.
+# bind tab:ctrl switch
+
+# Grid
+bind esc:ctrl grid pidding:0 ${mon-iMac}:${cell-X},${cell-Y} ${mon-Samsung24}:8,6
+
+# Relaunch
+# bind f12:ctrl;shift;cmd relaunch
+
+# Test Cases
+source .slate.test if_exists
