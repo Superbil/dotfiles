@@ -2,7 +2,7 @@
 
 this is my dotfiles
 
-I use stow to manager it.
+I use [stow](http://www.gnu.org/software/stow/) to manager it.
 
 ## Use way ##
 
