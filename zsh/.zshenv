@@ -31,6 +31,9 @@ for dir ($pathdirs) {
     fi
 }
 
+# setup TERM to 256 color
+export TERM=xterm-256color
+
 # setup local env
 if [[ -e $HOME/.zshenv-superbil ]]; then
     source $HOME/.zshenv-superbil
