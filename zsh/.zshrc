@@ -18,6 +18,9 @@ base_plugins=(
     urltools
     z
 )
+if [[ -d $ZSH/custom/plugins/zsh-syntax-highlighting ]]; then
+    base_plugins=($base_plugins zsh-syntax-highlighting)
+fi
 
 langs_plugins=(
     # ruby
