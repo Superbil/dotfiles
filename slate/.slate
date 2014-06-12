@@ -69,10 +69,10 @@ bind p:ctrl;alt ${1-mid}
 
 # Resize Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind right:ctrl;cmd resize +10% +0
-bind left:ctrl;cmd  resize -10% +0
-bind up:ctrl;cmd    resize +0   -10%
-bind down:ctrl;cmd  resize +0   +10%
+bind right:ctrl;cmd;alt resize +10% +0
+bind left:ctrl;cmd;alt  resize -10% +0
+bind up:ctrl;cmd;alt    resize +0   -10%
+bind down:ctrl;cmd;alt  resize +0   +10%
 
 # Push Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
