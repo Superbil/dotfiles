@@ -84,6 +84,9 @@ fi
 # while had $HOME/perl5 eval it
 # that can install cpan without sudo
 # https://github.com/Homebrew/homebrew/wiki/Gems,-Eggs-and-Perl-Modules#perl-cpan-modules-without-sudo
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+if [[ -x $HOME/perl5/lib/perl5 ]]; then
+    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+fi
 
 autoload zmvq
+

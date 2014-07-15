@@ -1,7 +1,7 @@
 ## set up brew cask
-tap phinze/homebrew-cask
-install brew-cask
-tap caskroom/versions
+#tap phinze/homebrew-cask
+#install brew-cask
+#tap caskroom/versions
 
 ## brew installs always use
 install git
@@ -126,13 +126,14 @@ install youtube-dl
 install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf-objc.rb
 
 ## editor
-cask install xquartz
-install emacs  --HEAD  --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
+#cask install xquartz
+#install emacs  --HEAD  --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
 
 ## brew cask install install apps
 cask install Handbrake
 cask install ImageAlpha
-cask install KeyRemap4MacBook
+#cask install KeyRemap4MacBook
+cask install keyremap4macbook-mountainlion
 cask install Knock
 cask install LICEcap
 cask install Leap-Motion
@@ -147,7 +148,7 @@ cask install alfred
 cask install arduino
 cask install audacity
 cask install bettertouchtool
-cask install bitcoin
+#cask install bitcoin
 cask install charles
 cask install clipmenu
 cask install colloquy
@@ -163,13 +164,13 @@ cask install genymotion
 cask install google-drive
 cask install google-earth
 cask install grandperspective
-cask install macmoney
-cask install messenger-for-telegram
-cask install OpenOffice
+#cask install macmoney
+#cask install messenger-for-telegram
+#cask install OpenOffice
 cask install skype
 cask install spotify
-cask install torBrowserBundle
-cask install uTorrent
+cask install torBrowser
+#cask install uTorrent
 cask install VLC
 cask install wedge
 cask install Welly
@@ -191,7 +192,7 @@ cask install virtualbox
 
 ## brew cask install browsers
 cask install firefox
-cask install google-chrome
+#cask install google-chrome
 cask install opera-next
 
 ## link some thing

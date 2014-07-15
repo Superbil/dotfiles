@@ -109,3 +109,5 @@ export CLICOLOR=1
 export LSCOLORS=gxfxaxdxcxegedabagacad
 
 export PS1='\W @\h > '
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
