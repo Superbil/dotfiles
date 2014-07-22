@@ -132,11 +132,9 @@ install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf
 ## brew cask install install apps
 cask install Handbrake
 cask install ImageAlpha
-#cask install KeyRemap4MacBook
 cask install keyremap4macbook-mountainlion
 cask install Knock
 cask install LICEcap
-cask install Leap-Motion
 cask install MultiBit
 cask install Nally
 cask install Notational-Velocity
@@ -145,14 +143,11 @@ cask install Sparrow
 cask install adium
 cask install airserver
 cask install alfred
-cask install arduino
 cask install audacity
 cask install bettertouchtool
-#cask install bitcoin
 cask install charles
 cask install clipmenu
 cask install colloquy
-cask install controllermate
 cask install cyberduck
 cask install dictunifier
 cask install divvy
@@ -164,20 +159,16 @@ cask install genymotion
 cask install google-drive
 cask install google-earth
 cask install grandperspective
-#cask install macmoney
-#cask install messenger-for-telegram
-#cask install OpenOffice
 cask install skype
 cask install spotify
 cask install torBrowser
-#cask install uTorrent
 cask install VLC
 cask install wedge
 cask install Welly
 cask install YoruFukurou
 
 ## brew cask install dev tools
-cask install Slate
+#cask install Slate
 cask install Typinator
 cask install anvil
 cask install crashlytics
@@ -192,7 +183,7 @@ cask install virtualbox
 
 ## brew cask install browsers
 cask install firefox
-#cask install google-chrome
+cask install google-chrome
 cask install opera-next
 
 ## link some thing
