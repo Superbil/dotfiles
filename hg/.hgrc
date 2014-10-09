@@ -1,6 +1,6 @@
 [ui]
 username=Superbil <superbil@gmail.com>
-ignore=/Users/superbil/.hgignore_global
+ignore=~/.hgignore_global
 [merge-tools]
 sourcetreemerge.gui=False
 sourcetreebulkmerge.gui=False
