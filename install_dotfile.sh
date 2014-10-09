@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-Target=$HOME
+TARGET=$HOME
 STOW=stow
 
-for arg in $*
+for ARG in $*
 do
-    if [[ -d $arg ]]; then
-        echo "Installing $arg"
-        stow -t $Target $arg
+    if [[ -d $ARG ]]; then
+        echo "Installing $ARG"
+        stow -t $TARGET $ARG
     else
-        echo "$arg don't existed won't install"
+        echo "$ARG don't existed won't install"
     fi
 done

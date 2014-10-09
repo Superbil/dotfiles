@@ -81,7 +81,18 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-# while had $HOME/perl5 eval it
+# TRAMP mode
+# http://www.emacswiki.org/TrampMode
+if [[ "$TERM" == "dumb" ]]; then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
+fi
+
+# While had $HOME/perl5 eval it
 # that can install cpan without sudo
 # https://github.com/Homebrew/homebrew/wiki/Gems,-Eggs-and-Perl-Modules#perl-cpan-modules-without-sudo
 if [[ -x $HOME/perl5/lib/perl5 ]]; then
