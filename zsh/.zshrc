@@ -90,3 +90,4 @@ fi
 
 autoload zmvq
 
+setopt histignoredups
