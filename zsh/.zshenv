@@ -34,6 +34,12 @@ for dir ($pathdirs) {
 # setup TERM to 256 color
 export TERM=xterm-256color
 
+# Useful helpers
+alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias df='df -h'            # Disk free, in gigabytes, not bytes
+alias du='du -h -c'         # Calculate total disk usage for a folder
+alias svim='sudo vim'       # Run vim as super user
+
 # setup local env
 if [[ -e $HOME/.zshenv-superbil ]]; then
     source $HOME/.zshenv-superbil
