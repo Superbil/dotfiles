@@ -111,7 +111,10 @@ export LSCOLORS=gxfxaxdxcxegedabagacad
 
 export PS1='\W @\h > '
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [ -d $HOME/.rvm/bin ]; then
+   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
+
 # auto use TMUX after login
 # https://wiki.archlinux.org/index.php/tmux
 if which tmux >/dev/null 2>&1; then
