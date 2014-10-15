@@ -10,6 +10,7 @@ base_plugins=(
     colorize
     copydir
     copyfile
+    extract
     git
     git-flow-avh
     gnu-utils
