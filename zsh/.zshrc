@@ -103,3 +103,10 @@ fi
 autoload zmvq
 
 setopt histignoredups
+
+# Run on new shell
+if [ -e $(which fortune) ]; then
+    echo ""
+    fortune
+    echo ""
+fi
