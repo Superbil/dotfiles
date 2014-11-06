@@ -105,7 +105,8 @@ autoload zmvq
 setopt histignoredups
 
 # Run on new shell
-if [ -e $(which fortune) ]; then
+local FORTUNE=$(which fortune)
+if [ -e $FORTUNE ]; then
     echo ""
     fortune
     echo ""
