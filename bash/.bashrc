@@ -109,9 +109,9 @@ if [ -d $HOME/.rvm/bin ]; then
 fi
 
 alias tmuxa='tmux attach || tmux new-session'
-# auto use TMUX after login
-# https://wiki.archlinux.org/index.php/tmux
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && tmuxa
-fi
+# # auto use TMUX after login
+# # https://wiki.archlinux.org/index.php/tmux
+# if which tmux >/dev/null 2>&1; then
+#     #if not inside a tmux session, and if no session is started, start a new session
+#     test -z "$TMUX" && tmuxa
+# fi
