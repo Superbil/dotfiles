@@ -53,6 +53,7 @@ darwin_plugins=(
     pod
     # quickly to open project
     xcode
+    docker
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -98,6 +99,11 @@ fi
 # https://github.com/Homebrew/homebrew/wiki/Gems,-Eggs-and-Perl-Modules#perl-cpan-modules-without-sudo
 if [[ -x $HOME/perl5/lib/perl5 ]]; then
     eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+fi
+
+# configure rvm
+if [ -x $HOME/.rvm/scripts/rvm ]; then
+    source $HOME/.rvm/scripts/rvm
 fi
 
 autoload zmvq
