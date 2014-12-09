@@ -54,6 +54,7 @@ darwin_plugins=(
     # quickly to open project
     xcode
     docker
+    aws
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
