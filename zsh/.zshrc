@@ -16,6 +16,7 @@ base_plugins=(
     gnu-utils
     history
     svn
+    sudo
     urltools
     z
 )
