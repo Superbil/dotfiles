@@ -64,6 +64,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# local script folder
+[ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
+
 # setup prompt_char to a burger, yummy
 # don't let it work inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
