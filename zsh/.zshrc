@@ -91,6 +91,18 @@ if [[ "$TERM" == "dumb" ]]; then
   PS1='$ '
 fi
 
+## Emacs configure
+EC_PATH=$(which emacsclient)
+if [ -x $EC_PATH ]]; then
+    local EC_ARGS="${EC_PATH} -c"
+    if [ -z $SSH_CLIENT ]; then
+        export EDITOR="${EC_ARGS}"
+    else
+        export EDITOR="${EC_ARGS} -t"
+    fi
+fi
+unset EC_PATH
+
 # While had $HOME/perl5 eval it
 # that can install cpan without sudo
 # https://github.com/Homebrew/homebrew/wiki/Gems,-Eggs-and-Perl-Modules#perl-cpan-modules-without-sudo
@@ -102,6 +114,12 @@ fi
 if [ -x $HOME/.rvm/scripts/rvm ]; then
     source $HOME/.rvm/scripts/rvm
 fi
+
+# python setup
+export PYTHONSTARTUP=$HOME/.pythonrc
+
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # zmv is a module that allow people to do massive rename.
 autoload zmv
