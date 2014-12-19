@@ -83,17 +83,6 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-# TRAMP mode
-# http://www.emacswiki.org/TrampMode
-if [[ "$TERM" == "dumb" ]]; then
-  unsetopt zle
-  unsetopt prompt_cr
-  unsetopt prompt_subst
-  unfunction precmd
-  unfunction preexec
-  PS1='$ '
-fi
-
 ## Emacs configure
 EC_PATH=$(which emacsclient)
 if [ -x $EC_PATH ]; then
