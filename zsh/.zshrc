@@ -93,7 +93,7 @@ fi
 
 ## Emacs configure
 EC_PATH=$(which emacsclient)
-if [ -x $EC_PATH ]]; then
+if [ -x $EC_PATH ]; then
     local EC_ARGS="${EC_PATH} -c"
     if [ -z $SSH_CLIENT ]; then
         export EDITOR="${EC_ARGS}"
