@@ -124,9 +124,6 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-# zmv is a module that allow people to do massive rename.
-autoload zmv
-
 setopt histignoredups
 
 # setup local zshrc
