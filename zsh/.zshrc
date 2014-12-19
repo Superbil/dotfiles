@@ -114,6 +114,7 @@ fi
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
 
+# HISTIGNOREDUPS prevents the current line from being saved in the history if it is the same as the previous one;
 setopt histignoredups
 
 # setup local zshrc
