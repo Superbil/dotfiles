@@ -9,6 +9,6 @@ alias du='du -h -c'         # Calculate total disk usage for a folder
 alias svim='sudo vim'       # Run vim as super user
 
 # setup local env
-if [[ -e $HOME/.zshenv-superbil ]]; then
-    source $HOME/.zshenv-superbil
+if [[ -e $HOME/.zshenv-local ]]; then
+    source $HOME/.zshenv-local
 fi

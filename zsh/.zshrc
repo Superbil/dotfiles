@@ -126,6 +126,11 @@ autoload zmv
 
 setopt histignoredups
 
+# setup local zshrc
+if [ -r $HOME/.zshrc-local ]; then
+    source $HOME/.zshrc-local
+fi
+
 # Run on new shell
 local FORTUNE=$(which fortune)
 if [ -e $FORTUNE ]; then
