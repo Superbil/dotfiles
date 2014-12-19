@@ -3,7 +3,6 @@
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gentoo"
-
 COMPLETION_WAITING_DOTS="true"
 
 base_plugins=(
@@ -65,9 +64,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# Set Manpath for homebrew
-manpath=(/usr/share/man /usr/local/share/man $manpath)
-
 # setup prompt_char to a burger, yummy
 # don't let it work inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
@@ -107,7 +103,8 @@ if [ -x $HOME/.rvm/scripts/rvm ]; then
     source $HOME/.rvm/scripts/rvm
 fi
 
-autoload zmvq
+# zmv is a module that allow people to do massive rename.
+autoload zmv
 
 setopt histignoredups
 
