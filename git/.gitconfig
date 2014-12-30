@@ -76,9 +76,7 @@
         trustExitCode = true
 [push]
         default = tracking
-[credential]
-        helper = osxkeychain
-[include]
-        path =~/.gitconfig-local
 [rebase]
 	autosquash = true
+[include]
+        path =~/.gitconfig-local
