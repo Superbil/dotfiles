@@ -95,11 +95,6 @@ if [ -x $EC_PATH ]; then
 fi
 unset EC_PATH
 
-# configure rvm
-if [ -x $HOME/.rvm/scripts/rvm ]; then
-    source $HOME/.rvm/scripts/rvm
-fi
-
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
 
