@@ -98,8 +98,19 @@ unset EC_PATH
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-# HISTIGNOREDUPS prevents the current line from being saved in the history if it is the same as the previous one;
-setopt histignoredups
+# ignore history dupes
+setopt hist_ignore_dups
+# really ignore dupes
+setopt hist_ignore_all_dups
+# ignore dupes in history search
+setopt hist_find_no_dups
+# don't save dupes
+setopt hist_save_no_dups
+# if any command starts with whitespace, it will not be saved.
+# it will still be displayed in the current session, though
+setopt hist_ignore_space
+# ignore `history' and `fc' commands
+setopt hist_no_store
 
 # setup local zshrc
 if [ -r $HOME/.zshrc-local ]; then
