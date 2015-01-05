@@ -74,7 +74,8 @@ if [[ -z "$INSIDE_EMACS" ]]; then
         if [ $UID -eq 0 ]; then
             echo "#";
         else
-            if [[ "$(uname -s)" == "Darwin" ]]; then
+            # If is ssh login, don't use emoji-clock
+            if [[ "$(uname -s)" == "Darwin" && -z "$SSH_TTY" ]]; then
                 echo "$(emoji-clock) ";
             else
                 echo "$"
