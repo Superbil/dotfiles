@@ -38,6 +38,7 @@ langs_plugins=(
     # javascript
     node
     npm
+    nodejs # https://github.com/poying/zsh-nodejs-plugin
 )
 
 darwin_plugins=(
