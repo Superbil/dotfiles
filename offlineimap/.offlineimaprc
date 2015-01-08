@@ -1,130 +1,24 @@
 # -*- mode: conf-unix; -*-
 
 [general]
-
 pythonfile = ~/bin/offlineimap.py
-
 metadata = ~/.offlineimap
-
-# This variable specifies which accounts are defined.  Separate them
-# with commas.  Account names should be alphanumeric only.
-# You will need to specify one section per account below.  You may
-# not use "general" for an account name.
-
 accounts = Superbil
-maildir-windows-compatible = no
 
-# Specifies if we want to sync GMail lables with the local repository.
-# Effective only for GMail IMAP repositories.
-#
-
-# synclabels = no
-
-# Name of the header to use for label storage.  Format for the header
-# value differs for different headers, because there are some de-facto
-# standards set by popular clients:
-# - X-Label or Keywords keep values separated with spaces; for these
-#   you, obviously, should not have label values that contain spaces;
-# - X-Keywords use comma (',') as the separator.
-# To be consistent with the usual To-like headers, for the rest of header
-# types we use comma as the separator.
-#
-#labelsheader = X-Keywords
-
-# Set of labels to be ignored.  Comma-separated list.  GMail-specific
-# labels all start with backslash ('\').
-#
-#ignorelabels = \Inbox, \Starred, \Sent, \Draft, \Spam, \Trash, \Important
-
-# In between synchronisations, OfflineIMAP can monitor mailboxes for new
-# messages using the IDLE command. If you want to enable this, specify here
-# the folders you wish to monitor. Note that the IMAP protocol requires a
-# separate connection for each folder monitored in this way, so setting
-# this option will force settings for:
-#     maxconnections - to be at least the number of folders you give
-#     holdconnectionopen - to be true
-#     keepalive - to be 29 minutes unless you specify otherwise
-#
-# This feature isn't complete and may well have problems. See the manual
-# for more details.
-#
-# This option should return a Python list. For example
-#
-# idlefolders = ['INBOX', 'INBOX.Alerts']
-#
-
-# You can specify a folder translator.  This must be a eval-able
-# Python expression that takes a foldername arg and returns the new
-# value.  I suggest a lambda.  This example below will remove "INBOX." from
-# the leading edge of folders (great for Courier IMAP users)
-#
-# See the user documentation for details and use cases. They are also
-# online at:
-# http://docs.offlineimap.org/en/latest/nametrans.html
-#
-# WARNING: you MUST construct this such that it NEVER returns
-# the same value for two folders, UNLESS the second values are
-# filtered out by folderfilter below.  Failure to follow this rule
-# will result in undefined behavior
-#
-# nametrans = lambda foldername: re.sub('^INBOX\.', '', foldername)
-# nametrans = lambda foldername: foldername.decode('utf-8').encode('imap4-utf-7')
-
-# Using Courier remotely and want to duplicate its mailbox naming
-# locally?  Try this:
-#
-# nametrans = lambda foldername: re.sub('^INBOX\.*', '.', foldername)
-
-# Determines if folderfilter will be invoked on each run
-# (dynamic folder filtering) or filtering status will be determined
-# at startup (default behaviour).
-#
-# dynamic_folderfilter = False
-
-# You can specify which folders to sync using the folderfilter
-# setting. You can provide any python function (e.g. a lambda function)
-# which will be invoked for each foldername. If the filter function
-# returns True, the folder will be synced, if it returns False, it. The
-# folderfilter operates on the *UNTRANSLATED* name (before any nametrans
-# translation takes place).
-#
-# Example 1: synchronizing only INBOX and Sent.
-#
-# folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
-#
-# Example 2: synchronizing everything except Trash.
-#
-# folderfilter = lambda foldername: foldername not in ['Trash']
-#
-# Example 3: Using a regular expression to exclude Trash and all folders
-# containing the characters "Del".
-#
-# folderfilter = lambda foldername: not re.search('(^Trash$|Del)', foldername)
-#
-# If folderfilter is not specified, ALL remote folders will be
-# synchronized.
-#
-# You can span multiple lines by indenting the others.  (Use backslashes
-# at the end when required by Python syntax)  For instance:
-#
-# folderfilter = lambda foldername: foldername in
-#        ['INBOX', 'Sent Mail', 'Deleted Items',
-#         'Received']
-
-# The trash folder name may be different from [Gmail]/Trash
-# for example on German Gmail, this setting should be
-#
-# trashfolder = [Gmail]/Papierkorb
-#
-# You should look for the localized names of the spam folder too:
-# "spamfolder" tunable will help you to override the standard name.
+synclabels = no
+realdelete = no
 
 maxconnections = 1
+holdconnectionopen = true
+keepalive = 30
+idlefolders = ['INBOX', 'INBOX.Alerts']
+
+folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
 
 [Account Superbil]
 localrepository = Superbil-local
 remoterepository = Superbil-remote
-maxage = 30
+maxage = 7
 
 [DEFAULT]
 gmailtrashfolder = [Gmail]/Trash
@@ -134,14 +28,15 @@ certfile = /etc/openssl/cert.pem
 
 [Repository Superbil-local]
 type = GmailMaildir
-localfolders = ~/.mail/
+localfolders = ~/.mail/superbil
 
 [Repository Superbil-remote]
 type = Gmail
 remoteuser = superbil@gmail.com
-remotepasseval = get_password_keyring("superbil@gmail.com")
-realdelete = no
+remotepasseval = get_password_keyring("%(remoteuser)s")
+
+trashfolder: %(gmailtrashfolder)s
+
 ssl = yes
 sslcacertfile: %(certfile)s
-trashfolder: %(gmailtrashfolder)s
 
