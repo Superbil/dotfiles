@@ -139,7 +139,7 @@ localfolders = ~/.mail/
 [Repository Superbil-remote]
 type = Gmail
 remoteuser = superbil@gmail.com
-remotepasseval = get_password("superbil@gmail.com")
+remotepasseval = get_password_keyring("superbil@gmail.com")
 realdelete = no
 ssl = yes
 sslcacertfile: %(certfile)s
