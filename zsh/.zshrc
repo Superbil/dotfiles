@@ -54,6 +54,8 @@ darwin_plugins=(
     # quickly to open project
     xcode
     docker
+    # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
+    ibtool
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
