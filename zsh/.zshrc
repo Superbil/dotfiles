@@ -84,18 +84,6 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-## Emacs configure
-EC_PATH=$(which emacsclient)
-if [ -x $EC_PATH ]; then
-    local EC_ARGS="${EC_PATH} -c"
-    if [ -z $SSH_CLIENT ]; then
-        export EDITOR="${EC_ARGS}"
-    else
-        export EDITOR="${EC_ARGS} -t"
-    fi
-fi
-unset EC_PATH
-
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
 
