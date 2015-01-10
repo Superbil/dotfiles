@@ -13,8 +13,6 @@ holdconnectionopen = true
 keepalive = 30
 idlefolders = ['INBOX', 'INBOX.Alerts']
 
-folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important']
-
 [Account Superbil]
 localrepository = Superbil-local
 remoterepository = Superbil-remote
@@ -35,8 +33,8 @@ type = Gmail
 remoteuser = superbil@gmail.com
 remotepasseval = get_password_keyring("%(remoteuser)s")
 
+folderfilter = lambda foldername: foldername not in ['[Gmail]/Spam', '[Gmail]/All Mail', '[Gmail]/Starred', '[Gmail]/Important', '[Gmail]/Trash']
 trashfolder: %(gmailtrashfolder)s
 
 ssl = yes
 sslcacertfile: %(certfile)s
-
