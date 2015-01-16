@@ -80,3 +80,5 @@
 	autosquash = true
 [include]
         path =~/.gitconfig-local
+[gc]
+	auto = 0
