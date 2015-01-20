@@ -116,7 +116,7 @@ if [[ -x $HOME/perl5/lib/perl5 ]]; then
     eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 fi
 
-# pyenv
+# configure pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # configure rvm
