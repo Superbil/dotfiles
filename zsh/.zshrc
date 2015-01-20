@@ -87,11 +87,6 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-# configure rvm
-if [ -x $HOME/.rvm/scripts/rvm ]; then
-    source $HOME/.rvm/scripts/rvm
-fi
-
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
 
@@ -123,6 +118,11 @@ fi
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# configure rvm
+if [ -x $HOME/.rvm/scripts/rvm ]; then
+    source $HOME/.rvm/scripts/rvm
+fi
 
 # Run on new shell
 local FORTUNE=$(which fortune)
