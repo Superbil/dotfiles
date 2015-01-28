@@ -94,11 +94,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# export CLICOLOR=1
-# export LSCOLORS=gxfxaxdxcxegedabagacad
-
 export PS1='\W @\h > '
 
-if [ -d $HOME/.rvm/bin ]; then
-    export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# configure rvm
+if [ -x $HOME/.rvm/scripts/rvm ]; then
+    source $HOME/.rvm/scripts/rvm
 fi
