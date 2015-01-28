@@ -6,3 +6,5 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias g='git'
+
+alias tmuxa='tmux attach || tmux new-session'
