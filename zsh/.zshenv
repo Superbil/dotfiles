@@ -1,7 +1,3 @@
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 # TRAMP mode
 # http://www.emacswiki.org/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
