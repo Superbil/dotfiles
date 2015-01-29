@@ -1,15 +1,14 @@
-## set up brew cask
-#tap phinze/homebrew-cask
-#install brew-cask
-#tap caskroom/versions
-
 ## brew installs always use
+install bash
+install coreutils
 install git
-install git-flow-avh
 install gnupg
-install node
 install z
 install zsh
+
+## install newer version
+tap homebrew/dupes
+install grep
 
 ## brew installs other need
 install android-sdk
@@ -44,6 +43,7 @@ install fribidi
 install ghc
 install ghostscript
 install git-extras
+install git-flow-avh
 install gnome-common
 install gnu-getopt
 install gnupg2
@@ -65,7 +65,7 @@ install jasper
 install jenkins
 install lame
 install lesspipe
-install llvm   --rtti  --all-targets  --with-clang
+install llvm --with-all-targets --with-clang --with-python --with-lld
 install lynx
 install lzo
 install markdown
@@ -74,6 +74,7 @@ install mpfr
 install mtr
 install mutt
 # install nu
+install node
 install openexr
 install openssl
 install ossp-uuid
@@ -94,7 +95,7 @@ install sdl_image
 install sdl_mixer
 install sdl_ttf
 install shiboken
-# install signing-party --with-rename-pgpring
+install signing-party --with-rename-pgpring
 install sip
 install smlnj
 install sphinx
@@ -123,13 +124,20 @@ install yasm
 install youtube-dl
 
 ## brew install custom
-install https://raw.githubusercontent.com/Superbil/protobuf-objc/master/protobuf-objc.rb
+tap superbil/protobuf
+install protobuf-objc
 
 ## editor
-#cask install xquartz
-#install emacs  --HEAD  --cocoa  --keep-ctags  --with-x  --with-gnutls  --srgb  --use-git-head
+tap railwaycat/emacsmacport
+install emacs-mac --icon-modern --keep-ctags --with-dbus --with-gnutls --with-imagemagick --with-xml2
+
+## set up brew cask
+tap phinze/homebrew-cask
+install brew-cask
+tap caskroom/versions
 
 ## brew cask install install apps
+#cask install xquartz
 cask install Handbrake
 cask install ImageAlpha
 cask install keyremap4macbook-mountainlion
@@ -173,7 +181,6 @@ cask install Typinator
 cask install anvil
 cask install crashlytics
 cask install dash
-cask install emacs
 cask install iFunBox
 cask install postgres
 cask install sourcetree
