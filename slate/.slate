@@ -7,24 +7,24 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 
 # Monitor Aliases
-alias mon-iMac      2560x1440
+alias mon-Main      2560x1440
 alias cell-X        11
 alias cell-Y        6
-alias mon-Samsung24 1920x1080
+alias mon-theOther  1920x1080
 
 # Position Aliases
 alias oneCell-X screenSizeX/${cell-X}
 alias oneCell-Y screenSizeY/${cell-Y}
-alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                ${oneCell-X}*7;screenSizeY      ${mon-iMac}
-alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*9;screenSizeY      ${mon-iMac}
-alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-iMac}
-alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
-alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
-alias 1-left2   move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY      ${mon-iMac}
-alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
-alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
-alias 1-mid     move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-iMac}
-alias 2-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-Samsung24}
+alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                ${oneCell-X}*7;screenSizeY      ${mon-Main}
+alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*9;screenSizeY      ${mon-Main}
+alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-Main}
+alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
+alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
+alias 1-left2   move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY      ${mon-Main}
+alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
+alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
+alias 1-mid     move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-Main}
+alias 2-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-theOther}
 
 # 2 Monitor layout
 layout 2monitors 'iTerm':SORT_TITLE                       ${2-full}
@@ -47,8 +47,8 @@ layout 1monitor 'Xcode':REPEAT                           ${1-main}
 layout 1monitor 'Spotify':REPEAT                         ${1-main}
 
 # Default Layouts
-default 2monitors resolutions:${mon-iMac};${mon-Samsung24}
-default 1monitor  resolutions:${mon-iMac}
+default 2monitors resolutions:${mon-Main};${mon-theOther}
+default 1monitor  resolutions:${mon-Main}
 
 # Basic location Bindings
 bind u:ctrl;alt ${1-chat-t}
@@ -103,7 +103,7 @@ bind esc:cmd hint
 # bind tab:ctrl switch
 
 # Grid
-bind esc:ctrl grid pidding:0 ${mon-iMac}:${cell-X},${cell-Y} ${mon-Samsung24}:8,6
+bind esc:ctrl grid pidding:0 ${mon-Main}:${cell-X},${cell-Y} ${mon-theOther}:8,6
 
 # Relaunch
 # bind f12:ctrl;shift;cmd relaunch
