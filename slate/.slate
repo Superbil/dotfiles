@@ -59,11 +59,11 @@ bind i:ctrl;alt ${1-left2-t}
 bind k:ctrl;alt ${1-left2}
 bind ,:ctrl;alt ${1-left2-b}
 
-bind .:ctrl;alt ${2-full}
+bind o:ctrl;alt ${1-main}
+bind l:ctrl;alt ${1-bigMain}
+bind .:ctrl;alt ${1-mid}
 
-bind ;:ctrl;alt ${1-main}
-bind ':ctrl;alt ${1-bigMain}
-bind p:ctrl;alt ${1-mid}
+bind p:ctrl;alt ${2-full}
 
 # Resize Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
