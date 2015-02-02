@@ -16,6 +16,7 @@ alias mon-Samsung24 1920x1080
 alias oneCell-X screenSizeX/${cell-X}
 alias oneCell-Y screenSizeY/${cell-Y}
 alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                ${oneCell-X}*7;screenSizeY      ${mon-iMac}
+alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*9;screenSizeY      ${mon-iMac}
 alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-iMac}
 alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
 alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
@@ -65,6 +66,7 @@ bind l:ctrl;alt ${2-right}
 bind .:ctrl;alt ${2-full}
 
 bind ;:ctrl;alt ${1-main}
+bind ':ctrl;alt ${1-bigMain}
 bind p:ctrl;alt ${1-mid}
 
 # Resize Bindings
