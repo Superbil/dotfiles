@@ -25,11 +25,9 @@ alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                $
 alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-iMac}
 alias 1-mid     move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-iMac}
 alias 2-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-Samsung24}
-alias 2-left    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-Samsung24}
-alias 2-right   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-Samsung24}
 
 # 2 Monitor layout
-layout 2monitors 'iTerm':SORT_TITLE                       ${2-full} | ${2-left} | ${2-right}
+layout 2monitors 'iTerm':SORT_TITLE                       ${2-full}
 # layout 2monitors 'Google Chrome'                          ${1-main} | ${2-full}
 layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
 layout 2monitors 'Firefox':REPEAT                         ${1-main}
@@ -61,8 +59,6 @@ bind i:ctrl;alt ${1-left2-t}
 bind k:ctrl;alt ${1-left2}
 bind ,:ctrl;alt ${1-left2-b}
 
-bind o:ctrl;alt ${2-left}
-bind l:ctrl;alt ${2-right}
 bind .:ctrl;alt ${2-full}
 
 bind ;:ctrl;alt ${1-main}
