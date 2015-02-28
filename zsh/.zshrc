@@ -125,9 +125,15 @@ if [ -x $HOME/.rvm/scripts/rvm ]; then
 fi
 
 # Run on new shell
-local FORTUNE=$(which fortune)
-if [ -e $FORTUNE ]; then
-    echo ""
-    fortune
-    echo ""
-fi
+fortune_say() {
+    local fortune=$(which fortune)
+    local cowsay=$(which cowsay)
+    [ ! -e $fortune ] && return
+
+    if [ -e $cowsay ]; then
+        $fortune | $cowsay -f small -pn
+    else
+        echo "" && $fortune && echo ""
+    fi
+}
+fortune_say
