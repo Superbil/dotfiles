@@ -7,4 +7,5 @@ alias l='ls -CF'
 
 alias g='git'
 
-alias tmuxa='tmux attach || tmux new-session'
+alias ta='tmux attach || tmux new-session'
+alias tl='tmux ls'
