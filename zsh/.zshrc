@@ -131,7 +131,12 @@ fortune_say() {
     [ ! -e $fortune ] && return
 
     if [ -e $cowsay ]; then
-        $fortune | $cowsay -f small -pn
+        # Random cow say
+        if [ -d /usr/local/share/cows/ ]; then
+            $fortune | $cowsay -f $(ls /usr/local/share/cows/ | shuf -n1)
+        else
+            $fortune | $cowsay -f small -pn
+        fi
     else
         echo "" && $fortune && echo ""
     fi
