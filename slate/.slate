@@ -24,6 +24,7 @@ alias 1-left2   move screenOriginX+${oneCell-X}*2;screenOriginY                $
 alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
 alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
 alias 1-mid     move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-Main}
+alias 1-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-Main}
 alias 2-full    move screenOriginX;screenOriginY                               screenSizeX;screenSizeY         ${mon-theOther}
 
 # 2 Monitor layout
@@ -31,15 +32,16 @@ layout 2monitors 'iTerm':SORT_TITLE                       ${2-full}
 # layout 2monitors 'Google Chrome'                          ${1-main} | ${2-full}
 layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
 layout 2monitors 'Firefox':REPEAT                         ${1-main}
-layout 2monitors 'Xcode':REPEAT                           ${1-main}
+layout 2monitors 'Xcode':REPEAT                           ${1-main} | ${1-bigMain}
 layout 2monitors 'Emacs':REPEAT                           ${1-main}
 layout 2monitors 'YoruFukurou':REPEAT                     ${1-left2}
+layout 2monitors 'Tweetbot':REPEAT                        ${1-left2}
 layout 2monitors 'Wedge':REPEAT                           ${1-chat}
 layout 2monitors 'Spotify':REPEAT                         ${2-full}
 
 # 1 Monitor layout
 layout 1monitor 'iTerm':SORT_TITLE,REPEAT                ${1-main}
-layout 1monitor 'Google Chrome':REPEAT                   ${1-main}
+# layout 1monitor 'Google Chrome':REPEAT                   ${1-main}
 layout 1monitor 'Emacs':REPEAT                           ${1-main}
 layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
 layout 1monitor 'Firefox':REPEAT                         ${1-main}
@@ -63,6 +65,7 @@ bind o:ctrl;alt ${1-main}
 bind l:ctrl;alt ${1-bigMain}
 bind .:ctrl;alt ${1-mid}
 
+bind n:ctrl;alt ${1-full}
 bind p:ctrl;alt ${2-full}
 
 # Resize Bindings
