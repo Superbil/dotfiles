@@ -35,7 +35,7 @@ layout 2monitors 'Firefox':REPEAT                         ${1-main}
 layout 2monitors 'Xcode':REPEAT                           ${1-main} | ${1-bigMain}
 layout 2monitors 'Emacs':REPEAT                           ${1-main}
 layout 2monitors 'YoruFukurou':REPEAT                     ${1-left2}
-layout 2monitors 'Tweetbot':REPEAT                        ${1-left2}
+# layout 2monitors 'Tweetbot':REPEAT                        ${1-left2}
 layout 2monitors 'Wedge':REPEAT                           ${1-chat}
 layout 2monitors 'Spotify':REPEAT                         ${2-full}
 
