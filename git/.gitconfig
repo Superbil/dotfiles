@@ -78,7 +78,9 @@
         default = tracking
 [rebase]
 	autosquash = true
-[include]
-        path =~/.gitconfig-local
 [gc]
 	auto = 0
+[format]
+	pretty = fuller
+[include]
+        path =~/.gitconfig-local
