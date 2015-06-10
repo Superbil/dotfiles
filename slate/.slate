@@ -20,6 +20,7 @@ alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                $
 alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-Main}
 alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
 alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
+alias 1-chat-left move screenOriginX;screenOriginY                             ${oneCell-X}*4;screenSizeY      ${mon-Main}
 alias 1-left2   move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY      ${mon-Main}
 alias 1-left2-t move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
 alias 1-left2-b move screenOriginX+${oneCell-X}*2;screenOriginY+screenSizeY/2  ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
@@ -53,6 +54,8 @@ default 2monitors resolutions:${mon-Main};${mon-theOther}
 default 1monitor  resolutions:${mon-Main}
 
 # Basic location Bindings
+bind h:ctrl;alt ${1-chat-left}
+
 bind u:ctrl;alt ${1-chat-t}
 bind j:ctrl;alt ${1-chat}
 bind m:ctrl;alt ${1-chat-b}
