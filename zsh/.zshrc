@@ -141,4 +141,7 @@ fortune_say() {
         echo "" && $fortune && echo ""
     fi
 }
-fortune_say
+# Don't use fortune_say inside emacs
+if [[ -z "$INSIDE_EMACS" ]]; then
+    fortune_say
+fi
