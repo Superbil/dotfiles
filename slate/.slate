@@ -15,8 +15,8 @@ alias mon-theOther  1920x1080
 # Position Aliases
 alias oneCell-X screenSizeX/${cell-X}
 alias oneCell-Y screenSizeY/${cell-Y}
-alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                ${oneCell-X}*7;screenSizeY      ${mon-Main}
-alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                ${oneCell-X}*9;screenSizeY      ${mon-Main}
+alias 1-main    move screenOriginX+${oneCell-X}*4;screenOriginY                screenSizeX-${oneCell-X}*4;screenSizeY  ${mon-Main}
+alias 1-bigMain move screenOriginX+${oneCell-X}*2;screenOriginY                screenSizeX-${oneCell-X}*2;screenSizeY  ${mon-Main}
 alias 1-chat    move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY      ${mon-Main}
 alias 1-chat-t  move screenOriginX;screenOriginY                               ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
 alias 1-chat-b  move screenOriginX;screenOriginY+screenSizeY/2                 ${oneCell-X}*2;screenSizeY/2    ${mon-Main}
