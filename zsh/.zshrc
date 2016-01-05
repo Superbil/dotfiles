@@ -123,9 +123,6 @@ then
     export `envchain homebrew env | grep GITHUB_API_TOKEN`
 fi
 
-# configure pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 # configure rvm
 if [ -x $HOME/.rvm/scripts/rvm ]; then
     source $HOME/.rvm/scripts/rvm
