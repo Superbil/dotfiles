@@ -1,11 +1,3 @@
 # use tab for auto complite
 import rlcompleter, readline
 readline.parse_and_bind('tab: complete')
-
-# try to import uniout
-try:
-    __import__(uniout)
-except ImportError:
-    pass
-except NameError:
-    pass

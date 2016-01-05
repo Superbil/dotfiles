@@ -29,9 +29,7 @@ c.TerminalInteractiveShell.confirm_exit = False
 # c.InteractiveShellApp.code_to_run = ''
 
 # lines of code to run at IPython startup.
-c.InteractiveShellApp.exec_lines = [
-    'import uniout'
-]
+# c.InteractiveShellApp.exec_lines = []
 
 # Enable GUI event loop integration ('qt', 'wx', 'gtk', 'glut', 'pyglet',
 # 'osx').
