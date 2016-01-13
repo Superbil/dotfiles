@@ -1,66 +1,45 @@
 (require 'nnir)
 
-;;@see http://www.emacswiki.org/emacs/GnusGmail#toc1
-(setq gnus-select-method '(nntp "news.gmane.org"))
-
 ;; ask encyption password once
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
-(setq smtpmail-auth-credentials "~/.authinfo")
 
-;;@see http://www.gnu.org/software/emacs/manual/html_node/gnus/Expiring-Mail.html
+(setq gnus-select-method '(nnimap "Superbil"
+                                  (nnimap-address "imap.gmail.com")
+                                  (nnimap-stream ssl)
+                                  (nnir-search-engine imap)))
 
-;;; Gnus+Gmail
-(add-to-list 'gnus-secondary-select-methods
-             '(nnimap "gmail"
-                      (nnimap-address "imap.gmail.com") ; it could also be imap.googlemail.com if that's your server.
-                      (nnimap-server-port 993)
-                      (nnimap-stream ssl) ;@see http://www.gnu.org/software/emacs/manual/html_node/gnus/Expiring-Mail.html
-                      ;; press 'E' to expire email
-                      (nnmail-expiry-target "nnimap+gmail:[Gmail]/Trash")
-                      (nnmail-expiry-wait 90)))
-
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587
-                                   "superbil@gmail.com" nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      ;; Make Gnus NOT ignore [Gmail] mailboxes
-      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
+;; Make Gnus NOT ignore [Gmail] mailboxes
+(setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
 
 ;; Replace [ and ] with _ in ADAPT file names
-(setq nnheader-file-name-translation-alist '((?[ . ?_) (?] . ?_)))
+;; Fix bug for Gnus v5.13
+(setq nnheader-file-name-translation-alist '((?[ . ?_) (?] . ?_)) )
 
+(setq gnus-face-1 'font-lock-keyword-face
+      gnus-face-2 'font-lock-doc-face)
 
-(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
-
-(setq-default
- gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f  %B%s%)\n"
- gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
- gnus-summary-thread-gathering-function 'gnus-gather-threads-by-references
- gnus-sum-thread-tree-false-root ""
- gnus-sum-thread-tree-indent ""
- gnus-sum-thread-tree-leaf-with-other "-> "
- gnus-sum-thread-tree-root ""
- gnus-sum-thread-tree-single-leaf "|_ "
- gnus-sum-thread-tree-vertical "|")
+(setq-default gnus-summary-line-format "%U%R%z%* %1{%d%} %(%-20,20f %2{%4k%} %B%s%) \n"
+              ;; gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f  %B%s%)\n"
+              gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
+              gnus-summary-thread-gathering-function 'gnus-gather-threads-by-references
+              )
 
 (setq gnus-thread-sort-functions
       '((not gnus-thread-sort-by-date)
         (not gnus-thread-sort-by-number)))
 
-; NO 'passive
+;; NO 'passive
 (setq gnus-use-cache t)
 (setq gnus-use-adaptive-scoring t)
 (setq gnus-save-score t)
 (add-hook 'mail-citation-hook 'sc-cite-original)
 (add-hook 'message-sent-hook 'gnus-score-followup-article)
 (add-hook 'message-sent-hook 'gnus-score-followup-thread)
-; @see http://stackoverflow.com/questions/945419/how-dont-use-gnus-adaptive-scoring-in-some-newsgroups
+;; @see http://stackoverflow.com/questions/945419/how-dont-use-gnus-adaptive-scoring-in-some-newsgroups
 (setq gnus-parameters
       '(("nnimap.*"
-         (gnus-use-scoring nil))))
+         (gnus-use-scoring nil))
+        ))
 
 (defvar gnus-default-adaptive-score-alist
   '((gnus-kill-file-mark (from -10))
@@ -72,8 +51,33 @@
     (gnus-ticked-mark (from 10))
     (gnus-dormant-mark (from 5))))
 
-;; Fetch only part of the article if we can.  I saw this in someone
-;; else's .gnus
+;; (require-package 'bbdb)
+;; ;; BBDB: Adress list
+;; (when (file-exists-p "/usr/share/emacs/site-lisp/bbdb")
+;; (setq gnus-score-find-score-files-function
+;;       '(gnus-score-find-hierarchical gnus-score-find-bnews bbdb/gnus-score))
+;;   (require 'bbdb)
+;;   (bbdb-initialize 'message 'gnus 'sendmail)
+;;   (setq bbdb-file (expand-file-name "bbdb.db" gnus-home-directory))
+;;   (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+;;   (setq bbdb/mail-auto-create-p t
+;;         bbdb/news-auto-create-p t)
+;;   (defvar bbdb-time-internal-format "%Y-%m-%d"
+;;     "The internal date format.")
+;;   ;;;###autoload
+;;   (defun bbdb-timestamp-hook (record)
+;;     "For use as a `bbdb-change-hook'; maintains a notes-field called `timestamp'
+;;     for the given record which contains the time when it was last modified.  If
+;;     there is such a field there already, it is changed, otherwise it is added."
+;;     (bbdb-record-putprop record 'timestamp (format-time-string
+;;                                             bbdb-time-internal-format
+;;                                             (current-time)))))
+;; (add-hook 'message-mode-hook
+;;           '(lambda ()
+;;              (flyspell-mode t)
+;;              (local-set-key "<TAB>" 'bbdb-complete-name)))
+
+;; Fetch only part of the article if we can.
 (setq gnus-read-active-file 'some)
 
 ;; Tree view for groups.  I like the organisational feel this has.
@@ -88,14 +92,13 @@
 ;; several replies or is part of a thread, only show the first
 ;; message.  'gnus-thread-ignore-subject' will ignore the subject and
 ;; look at 'In-Reply-To:' and 'References:' headers.
-(setq gnus-thread-hide-subtree t)
-(setq gnus-thread-ignore-subject t)
+;; (setq gnus-thread-hide-subtree t)
+;; (setq gnus-thread-ignore-subject t)
 
-; Personal Information
+;; Personal Information
 (setq user-full-name "Superbil"
       user-mail-address "superbil@gmail.com"
-      ;message-generate-headers-first t
-      )
+      message-generate-headers-first t)
 
 ;; Change email address for work folder.  This is one of the most
 ;; interesting features of Gnus.  I plan on adding custom .sigs soon
@@ -103,15 +106,23 @@
 ;; Usage, FROM: My Name <work>
 (setq gnus-posting-styles
       '((".*"
-         (name "Superbil" (address "superbil@gmail.com"
-                                   (organization "")
-                                   (signature-file "~/.signature")
-                                   ("X-Troll" "Emacs is better than Vi")
-                                   )))))
+         (name "Superbil"
+               (address "superbil@gmail.com"
+                        (organization "")
+                        (signature-file "~/.signature")
+                        ("X-Troll" "Emacs is better than Vi")
+                        )))))
 
-;; (setq mm-text-html-renderer 'eww)
+;;; SMTP
+(setq smtpmail-smtp-service 587)
 
-; http://www.gnu.org/software/emacs/manual/html_node/gnus/_005b9_002e2_005d.html
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "superbil@gmail.com" nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      starttls-use-gnutls t
+      smtpmail-local-domain "Fantasy.iMac")
+
 (setq gnus-use-correct-string-widths nil)
-
-(setq gnus-asynchronous t)
