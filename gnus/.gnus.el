@@ -6,7 +6,11 @@
 (setq gnus-select-method '(nnimap "Superbil"
                                   (nnimap-address "imap.gmail.com")
                                   (nnimap-stream ssl)
-                                  (nnir-search-engine imap)))
+                                  (nnir-search-engine imap)
+                                  (nnmail-expiry-wait 2)))
+
+(setq gnus-move-split-methods
+      '(("nnimap.*" "[Gmail]/All Mail")))
 
 ;; Make Gnus NOT ignore [Gmail] mailboxes
 (setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
