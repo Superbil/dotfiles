@@ -71,6 +71,7 @@
         fh = flow hotfix
         fs = flow support
         fv = flow version
+	lld = log --graph --pretty=format:'%h %an ~ %s @ [%ad] [%cd]' --date=format:'%Y-%m-%d %H:%M'
 [branch]
         autosetupmerge = true
         trustExitCode = true
