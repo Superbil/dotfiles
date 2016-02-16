@@ -1,82 +1,82 @@
 [core]
-        pager = less -R
-        editor = emacsclient -c -a "vim"
-        whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-        quotepath = false
-        deltaBaseCacheLimit = 1G
+	pager = less -R
+	editor = emacsclient -c -a "vim"
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	quotepath = false
+	deltaBaseCacheLimit = 1G
 	excludesfile = $HOME/.gitignore
-        ignorecase = false
+	ignorecase = false
 [color]
-        ui = auto
+	ui = auto
 [color "branch"]
-        current = yellow reverse
-        local = yellow
-        remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-        meta = yellow bold
-        frag = magenta bold
-        old = red bold
-        new = green bold
-        whitespace = red reverse
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "status"]
-        added = yellow
-        changed = green
-        untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [alias]
-        br = branch
-        co = checkout
-        cm = commit
-        df = diff
-        st = status -sb
-        ss = submodule foreach 'git status'
-        fe = fetch
-        rb = rebase
-        ls = ls-files
-        cms = commit --amend --no-edit --gpg-sign=2EA1461E
-        ## SVN-compatible versions of commands
-        # "foo-svn" is used here instead of "svn-foo" so that it's suggested when people tab-complete "git fo..."
-        # cherry-pick-svn = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick -e
-        # branch-svn = svn branch
-        # merge-svn = merge --squash
-        # push-svn = svn dcommit
-        # The next two lines are recommended, as their strengths outweigh their weaknesses.
-        # Strength: they make transitioning from SVN easier
-        # Weakness: they make teaching `git pull` harder when you move to git on the server
-        # Weakness: they encourage people to think that rebasing is a safe default
-        up = svn rebase
-        update = svn rebase
-        ## Git log
-        # lg = log -p
-        lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        lol = log --graph --decorate --oneline
-        lola = log --graph --decorate --oneline --all
-        new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-        # find tag TODO: BUG:
-        todo = grep TODO:
-        bug = grep BUG:
-        # becare to use this
-        undo = reset --hard
-        # diff stat with change
-        diffst = diff --stat -r
-        # start a server to use
-        server = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
-        # show user
-        who = shortlog -s --
-        # debug use
-        debug = !GIT_PAGER= gdb --args git
-        # git-flow
-        fi = flow init
-        ff = flow feature
-        fr = flow release
-        fh = flow hotfix
-        fs = flow support
-        fv = flow version
+	br = branch
+	co = checkout
+	cm = commit
+	df = diff
+	st = status -sb
+	ss = submodule foreach 'git status'
+	fe = fetch
+	rb = rebase
+	ls = ls-files
+	cms = commit --amend --no-edit --gpg-sign=2EA1461E
+	## SVN-compatible versions of commands
+	# "foo-svn" is used here instead of "svn-foo" so that it's suggested when people tab-complete "git fo..."
+	# cherry-pick-svn = !GIT_EDITOR='sed -i /^git-svn-id:/d' git cherry-pick -e
+	# branch-svn = svn branch
+	# merge-svn = merge --squash
+	# push-svn = svn dcommit
+	# The next two lines are recommended, as their strengths outweigh their weaknesses.
+	# Strength: they make transitioning from SVN easier
+	# Weakness: they make teaching `git pull` harder when you move to git on the server
+	# Weakness: they encourage people to think that rebasing is a safe default
+	up = svn rebase
+	update = svn rebase
+	## Git log
+	# lg = log -p
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%Cred%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
 	lld = log --graph --pretty=format:'%h %an ~ %s @ [%ad] [%cd]' --date=format:'%Y-%m-%d %H:%M'
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	# find tag TODO: BUG:
+	todo = grep TODO:
+	bug = grep BUG:
+	# becare to use this
+	undo = reset --hard
+	# diff stat with change
+	diffst = diff --stat -r
+	# start a server to use
+	server = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+	# show user
+	who = shortlog -s --
+	# debug use
+	debug = !GIT_PAGER= gdb --args git
+	# git-flow
+	fi = flow init
+	ff = flow feature
+	fr = flow release
+	fh = flow hotfix
+	fs = flow support
+	fv = flow version
 [branch]
-        autosetupmerge = true
-        trustExitCode = true
+	autosetupmerge = true
+	trustExitCode = true
 [push]
-        default = tracking
+	default = tracking
 [rebase]
 	autosquash = true
 [gc]
@@ -84,4 +84,4 @@
 [format]
 	pretty = fuller
 [include]
-        path =~/.gitconfig-local
+	path =~/.gitconfig-local
