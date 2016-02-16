@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+# Fix for tramp
+[[ $TERM == "dumb" ]] && return
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
