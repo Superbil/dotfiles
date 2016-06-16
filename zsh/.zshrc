@@ -152,3 +152,10 @@ fortune_say() {
 if [[ -z "$INSIDE_EMACS" ]]; then
     fortune_say
 fi
+
+homebrew_upgrade() {
+    if [ -n $SSL_CERT_FILE ]; then
+        unset SSL_CERT_FILE
+    fi
+    brew update && brew upgrade && brew cleanup
+}
