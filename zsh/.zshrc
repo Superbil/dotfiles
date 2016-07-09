@@ -58,6 +58,7 @@ darwin_plugins=(
     # quickly to open project
     xcode
     docker
+    vagrant
     # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
     ibtool
 )
