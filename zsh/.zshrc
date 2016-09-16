@@ -161,3 +161,7 @@ homebrew_upgrade() {
     brew update && brew upgrade
     brew cleanup
 }
+
+myip() {
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
