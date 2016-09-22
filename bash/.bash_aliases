@@ -9,3 +9,5 @@ alias g='git'
 
 alias ta='tmux attach || tmux new-session'
 alias tl='tmux ls'
+
+alias pcaman='pacman'
