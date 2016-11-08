@@ -153,12 +153,13 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     fortune_say
 fi
 
-homebrew_upgrade() {
+upgrade_homebrew() {
     if [ -n $SSL_CERT_FILE ]; then
         unset SSL_CERT_FILE
     fi
     brew update && brew upgrade
-    brew cleanup
+    # Cleanup without emacs
+    brew list | sed "s/emacs//g" | xargs brew cleanup
 }
 
 myip() {
