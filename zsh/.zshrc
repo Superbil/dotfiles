@@ -160,9 +160,7 @@ upgrade_homebrew() {
     if [ -n $SSL_CERT_FILE ]; then
         unset SSL_CERT_FILE
     fi
-    brew update && brew upgrade
-    # Cleanup without emacs and emacs-mac
-    brew list | sed "s/^emacs\(-mac\)*$//g" | xargs brew cleanup
+    brew update && brew upgrade && brew cleanup
 }
 
 myip() {
