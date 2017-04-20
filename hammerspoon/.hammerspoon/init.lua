@@ -33,5 +33,25 @@ function executeShellScript (filePath)
    end
 end
 
+--------------------------------------------------------------------------------
+-- Main
+--------------------------------------------------------------------------------
+
+-- Full frame on screen 0
+hs.hotkey.bind({"ctrl", "alt"}, "n", function()
+  local win = hs.window.focusedWindow()
+  local screen = hs.screen'0,0'
+  local max = screen:frame()
+  win:setFrame(max)
+end)
+
+-- Full frame on screen 1
+hs.hotkey.bind({"ctrl", "alt"}, "p", function()
+  local win = hs.window.focusedWindow()
+  local screen = hs.screen'1,0'
+  local max = screen:frame()
+  win:setFrame(max)
+end)
+
 -- Everything is fine
 hs.alert.show("Hammerspoon Config loaded")
