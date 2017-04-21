@@ -61,23 +61,6 @@ hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
 -- Functions
 -------------------------------------------------------------------------------
 
-function executeShellScript (filePath)
-   aslog = hs.logger.new('executeShellScript','debug')
-   -- Must change to string
-   local command = string.format('do shell script %q', filePath)
-   aslog.df(command)
-   ok,result,message = hs.osascript.applescript(command)
-   aslog.v(ok)
-   if result then
-      aslog.d('success ' .. result)
-   else
-      aslog.d('failed')
-      for key, val in pairs(message) do
-         print(key, val)
-      end
-   end
-end
-
 -- Reload config
 hs.hotkey.bind(keys.cac, "R", function()
   hs.reload()
