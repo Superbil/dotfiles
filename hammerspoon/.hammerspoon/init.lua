@@ -14,12 +14,13 @@ hs.grid.setGrid('2x2', secoundScreen)
 
 -- keyboard modifiers for bindings
 local keys = {
+   c   = {'ctrl'               },
    ca  = {'ctrl', 'alt'        },
    cac = {'cmd',  'alt', 'ctrl'}
 }
 
 -- Hotkeys
-hs.hotkey.bind({"ctrl"}, "escape", function() hs.grid.show() end)
+hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-left
 
@@ -50,6 +51,11 @@ hs.hotkey.bind(keys.ca, "right", function() hs.grid.pushWindowRight() end)
 hs.hotkey.bind(keys.ca, "left", function() hs.grid.pushWindowLeft() end)
 hs.hotkey.bind(keys.ca, "up", function() hs.grid.pushWindowUp() end)
 hs.hotkey.bind(keys.ca, "down", function() hs.grid.pushWindowDown() end)
+
+-- iTunes
+hs.hotkey.bind(keys.c, "f3", function() hs.itunes.next() end)
+hs.hotkey.bind(keys.c, "f2", function() hs.itunes.playpause() end)
+hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
 
 -------------------------------------------------------------------------------
 -- Functions
