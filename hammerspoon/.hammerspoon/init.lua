@@ -25,17 +25,17 @@ hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-left
 
 hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-t
-hs.hotkey.bind(keys.ca, "j", function () pushGrid('0,0 2x4', primaryScreen) end)        -- chat
-hs.hotkey.bind(keys.ca, "m", function () pushGrid('0,1 2x1', primaryScreen) end)        -- chat-b
+hs.hotkey.bind(keys.ca, "j", function() pushGrid('0,0 2x4', primaryScreen) end)        -- chat
+hs.hotkey.bind(keys.ca, "m", function() pushGrid('0,1 2x1', primaryScreen) end)        -- chat-b
 
 hs.hotkey.bind(keys.ca, "i", function() pushGrid('2,0 2x1', primaryScreen) end)         -- left2-t
-hs.hotkey.bind(keys.ca, "k", function () pushGrid('2,0 2x4', primaryScreen) end)        -- left2
-hs.hotkey.bind(keys.ca, ",", function () pushGrid('2,1 2x1', primaryScreen) end)        -- left2-b
+hs.hotkey.bind(keys.ca, "k", function() pushGrid('2,0 2x4', primaryScreen) end)        -- left2
+hs.hotkey.bind(keys.ca, ",", function() pushGrid('2,1 2x1', primaryScreen) end)        -- left2-b
 
-hs.hotkey.bind(keys.ca, "o", function () pushGrid('4,0 7x2', primaryScreen) end)        -- main
-hs.hotkey.bind(keys.ca, "l", function () pushGrid('2,0 9x2', primaryScreen) end)        -- bighMain
+hs.hotkey.bind(keys.ca, "o", function() pushGrid('4,0 7x2', primaryScreen) end)        -- main
+hs.hotkey.bind(keys.ca, "l", function() pushGrid('2,0 9x2', primaryScreen) end)        -- bighMain
 
-hs.hotkey.bind(keys.ca, ".", function () pushScreen(primaryScreen,0.1,0.1,0.8,0.8) end) -- center
+hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8) end) -- center
 
 hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)          -- full screen on screen 1
 hs.hotkey.bind(keys.ca, "p", function() pushScreen(secoundScreen,0,0,1,1) end)          -- full screen on screen 2
