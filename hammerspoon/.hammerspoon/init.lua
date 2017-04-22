@@ -15,16 +15,9 @@ if primaryScreen:name() == "Color LCD" then
    hs.grid.setGrid('3x2', primaryScreen)
 end
 
--- keyboard modifiers for bindings
-local keys = {
-   c   = {'ctrl'               },
-   ca  = {'ctrl', 'alt'        },
-   cac = {'cmd',  'alt', 'ctrl'}
-}
+require "preload"
 
 -- Hotkeys
-hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
-hs.hotkey.bind(keys.cac, "b", function() hs.openConsole() end)
 
 -- Chat
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)
@@ -90,23 +83,6 @@ function airplanMode()
    end
 end
 
--- Reload config
-hs.hotkey.bind(keys.cac, "R", function()
-  hs.reload()
-end)
-
-function reloadConfig(files)
-    doReload = false
-    for _,file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            doReload = true
-        end
-    end
-    if doReload then
-        hs.reload()
-    end
-end
-local hammerspoon_watcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 -------------------------------------------------------------------------------
 -- from https://github.com/exark/dotfiles/blob/master/.hammerspoon/init.lua
