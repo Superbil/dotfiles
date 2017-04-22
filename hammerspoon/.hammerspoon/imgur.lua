@@ -1,10 +1,10 @@
 -- from https://github.com/heptal/dotfiles/blob/master/roles/hammerspoon/files/imgur.lua
 -- Imgur upload from pasteboard
 
-hs.hotkey.bind(keys.cac, "y", function()
-    local image = hs.pasteboard.readImage()
+function imgurFromPasteboard()
+   local image = hs.pasteboard.readImage()
 
-    if image then
+   if image then
       local tempfile = "/tmp/tmp.png"
       image:saveToFile(tempfile)
       local b64 = hs.execute("base64 -i "..tempfile)
@@ -21,6 +21,6 @@ hs.hotkey.bind(keys.cac, "y", function()
             local imageURL = response.data.link
             hs.urlevent.openURLWithBundle(imageURL, hs.urlevent.getDefaultHandler("http"))
           end
-        end)
+      end)
     end
-  end)
+end

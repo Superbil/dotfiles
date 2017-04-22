@@ -1,5 +1,4 @@
 -- Airplane mode
-hs.hotkey.bind(keys.cac, "a", function() airplanMode() end)
 
 doAirplan = false
 function airplanMode()
