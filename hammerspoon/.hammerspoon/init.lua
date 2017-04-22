@@ -4,13 +4,16 @@
 -- variable config
 hs.window.animationDuration = 0
 hs.window.setShadows(false)
-local primaryScreen = hs.screen.primaryScreen()
+primaryScreen = hs.screen.primaryScreen()
 local secoundScreen = primaryScreen:toEast()
 
 -- grid config
 hs.grid.setGrid('11x2', primaryScreen)
 hs.grid.setMargins(hs.geometry.size(0,0))
 hs.grid.setGrid('2x2', secoundScreen)
+if primaryScreen:name() == "Color LCD" then
+   hs.grid.setGrid('3x2', primaryScreen)
+end
 
 -- keyboard modifiers for bindings
 local keys = {
