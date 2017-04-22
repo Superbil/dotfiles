@@ -8,8 +8,8 @@ primaryScreen = hs.screen.primaryScreen()
 local secoundScreen = primaryScreen:toEast()
 
 -- grid config
+hs.grid.setMargins({0, 0})
 hs.grid.setGrid('11x2', primaryScreen)
-hs.grid.setMargins(hs.geometry.size(0,0))
 hs.grid.setGrid('2x2', secoundScreen)
 if primaryScreen:name() == "Color LCD" then
    hs.grid.setGrid('3x2', primaryScreen)
@@ -26,7 +26,11 @@ local keys = {
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 hs.hotkey.bind(keys.cac, "b", function() hs.openConsole() end)
 
-hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-left
+-- Chat
+hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "j", function () pushGrid('0,0 2x4', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "m", function () pushGrid('0,1 2x1', primaryScreen) end)
 
 hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-t
 hs.hotkey.bind(keys.ca, "j", function() pushGrid('0,0 2x4', primaryScreen) end)        -- chat
