@@ -16,5 +16,10 @@ end)
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 hs.hotkey.bind(keys.cac, "b", function() hs.openConsole() end)
 
+-- iTunes
+hs.hotkey.bind(keys.c, "f3", function() hs.itunes.next() end)
+hs.hotkey.bind(keys.c, "f2", function() hs.itunes.playpause() end)
+hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
+
 -- core user modules
 require "imgur"

@@ -53,11 +53,6 @@ hs.hotkey.bind(keys.ca, "left", function() hs.grid.pushWindowLeft() end)
 hs.hotkey.bind(keys.ca, "up", function() hs.grid.pushWindowUp() end)
 hs.hotkey.bind(keys.ca, "down", function() hs.grid.pushWindowDown() end)
 
--- iTunes
-hs.hotkey.bind(keys.c, "f3", function() hs.itunes.next() end)
-hs.hotkey.bind(keys.c, "f2", function() hs.itunes.playpause() end)
-hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
-
 -------------------------------------------------------------------------------
 -- Functions
 -------------------------------------------------------------------------------
