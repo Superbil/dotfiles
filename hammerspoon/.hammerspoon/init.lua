@@ -14,13 +14,13 @@ hs.grid.setMargins({0, 0})
 hs.grid.setGrid('11x2', primaryScreen)
 hs.grid.setGrid('2x2', secoundScreen)
 if primaryScreen:name() == "Color LCD" then
-   hs.grid.setGrid('3x2', primaryScreen)
+   hs.grid.setGrid('2x2', primaryScreen)
 end
 
 -- Hotkeys
 
 -- Chat
-hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 4x4', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "j", function () pushGrid('0,0 2x4', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "m", function () pushGrid('0,1 2x1', primaryScreen) end)
