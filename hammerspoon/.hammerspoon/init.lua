@@ -8,8 +8,8 @@ local primaryScreen = hs.screen.primaryScreen()
 local secoundScreen = primaryScreen:toEast()
 
 -- grid config
+hs.grid.setMargins({0, 0})
 hs.grid.setGrid('11x2', primaryScreen)
-hs.grid.setMargins(hs.geometry.size(0,0))
 hs.grid.setGrid('2x2', secoundScreen)
 
 -- keyboard modifiers for bindings
@@ -22,23 +22,27 @@ local keys = {
 -- Hotkeys
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 
-hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-left
+-- Chat
+hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "j", function () pushGrid('0,0 2x4', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "m", function () pushGrid('0,1 2x1', primaryScreen) end)
 
-hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-t
-hs.hotkey.bind(keys.ca, "j", function () pushGrid('0,0 2x4', primaryScreen) end)        -- chat
-hs.hotkey.bind(keys.ca, "m", function () pushGrid('0,1 2x1', primaryScreen) end)        -- chat-b
+-- Left
+hs.hotkey.bind(keys.ca, "i", function() pushGrid('2,0 2x1', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "k", function () pushGrid('2,0 2x4', primaryScreen) end)
+hs.hotkey.bind(keys.ca, ",", function () pushGrid('2,1 2x1', primaryScreen) end)
 
-hs.hotkey.bind(keys.ca, "i", function() pushGrid('2,0 2x1', primaryScreen) end)         -- left2-t
-hs.hotkey.bind(keys.ca, "k", function () pushGrid('2,0 2x4', primaryScreen) end)        -- left2
-hs.hotkey.bind(keys.ca, ",", function () pushGrid('2,1 2x1', primaryScreen) end)        -- left2-b
+-- Center
+hs.hotkey.bind(keys.ca, "o", function () pushGrid('4,0 7x2', primaryScreen) end)
+hs.hotkey.bind(keys.ca, "l", function () pushGrid('2,0 9x2', primaryScreen) end)
 
-hs.hotkey.bind(keys.ca, "o", function () pushGrid('4,0 7x2', primaryScreen) end)        -- main
-hs.hotkey.bind(keys.ca, "l", function () pushGrid('2,0 9x2', primaryScreen) end)        -- bighMain
+-- Main
+hs.hotkey.bind(keys.ca, ".", function () pushScreen(primaryScreen,0.1,0.1,0.8,0.8) end)
 
-hs.hotkey.bind(keys.ca, ".", function () pushScreen(primaryScreen,0.1,0.1,0.8,0.8) end) -- center
-
-hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)          -- full screen on screen 1
-hs.hotkey.bind(keys.ca, "p", function() pushScreen(secoundScreen,0,0,1,1) end)          -- full screen on screen 2
+-- Full screen
+hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)
+hs.hotkey.bind(keys.ca, "p", function() pushScreen(secoundScreen,0,0,1,1) end)
 
 -- Resize window by grid
 hs.hotkey.bind(keys.cac, "right", function() hs.grid.resizeWindowWider() end)
