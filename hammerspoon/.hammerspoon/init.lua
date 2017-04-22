@@ -21,6 +21,7 @@ local keys = {
 
 -- Hotkeys
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
+hs.hotkey.bind(keys.cac, "b", function() hs.openConsole() end)
 
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 2x1', primaryScreen) end)         -- chat-left
 
