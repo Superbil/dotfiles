@@ -24,3 +24,4 @@ hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
 -- core user modules
 require "imgur"
 require "airport"
+require "resize"
