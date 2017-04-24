@@ -2,7 +2,6 @@
 hs.window.animationDuration = 0
 hs.window.setShadows(false)
 primaryScreen = hs.screen.primaryScreen()
-local secoundScreen = primaryScreen:toEast()
 
 require "preload"
 
@@ -38,7 +37,7 @@ hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8
 
 -- Full screen
 hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)
-hs.hotkey.bind(keys.ca, "p", function() pushScreen(secoundScreen,0,0,1,1) end)
+hs.hotkey.bind(keys.ca, "p", function() pushScreen(primaryScreen:toEast(),0,0,1,1) end)
 
 -- Resize window by grid
 hs.hotkey.bind(keys.cac, "right", function() hs.grid.resizeWindowWider() end)
