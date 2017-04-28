@@ -37,7 +37,38 @@ hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8
 
 -- Full screen
 hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)
-hs.hotkey.bind(keys.ca, "p", function() pushScreen(primaryScreen:toEast(),0,0,1,1) end)
+
+function getURLFromChrome()
+   return hs.osascript.applescript(
+      'set frontmostApplication to path to frontmost application\n \
+tell application \"Google Chrome\"\n \
+        set theUrl to get URL of active tab of first window\n \
+        set theResult to (get theUrl) \n \
+end tell\n \
+activate application (frontmostApplication as text)\n \
+set links to {}\n \
+copy theResult to the end of links\n \
+return links as string\n')
+end
+
+function sendToMpv()
+   local win = hs.window.focusedWindow()
+   if win:application():title() == "Google Chrome" then
+      local success, url, descriptor = getURLFromChrome()
+      if success and string.match(url, 'youtube.com') then
+         print('mpv playing ' .. url)
+         return os.execute(string.format('/usr/local/bin/mpv --fullscreen --screen 1 %s  > /dev/null &', url))
+      end
+   end
+   return false
+end
+
+hs.hotkey.bind(keys.ca, "p",
+               function()
+                  if not sendToMpv() then
+                     pushScreen(primaryScreen:toEast(),0,0,1,1)
+                  end
+end)
 
 -- Resize window by grid
 hs.hotkey.bind(keys.cac, "right", function() hs.grid.resizeWindowWider() end)
