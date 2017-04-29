@@ -1,3 +1,19 @@
+CVS
+\.\#.+       # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~          # emacs backup files
+\#.*\#       # emacs autosave files
+
+# Homebrew files
 Brewfile
-Readme.md
 backup_homebrew.sh
+
+^/README.*
