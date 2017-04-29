@@ -9,7 +9,7 @@ I use [stow](http://www.gnu.org/software/stow/) to manager it.
 * install script
 
 ``` shell
-install_dotfile.sh <package_name_1> ... <package_name_n>
+sstow.sh <package_name_1> ... <package_name_n>
 ```
 
 * manual install
@@ -22,7 +22,7 @@ alwasy set target is HOME
 
 ## Delete package
 
-`$ stow -t -D <package_name>`
+`$ stow -t ~ -D <package_name>`
 
 `package_name` is an folder
 
