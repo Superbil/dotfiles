@@ -13,8 +13,19 @@ hs.hotkey.bind(keys.cac, "R", function()
   hs.reload()
 end)
 
+function toggleConsole()
+   local win = hs.window.focusedWindow()
+   -- When win is nil, just call openConsole
+   if not win then hs.openConsole() end
+
+   if win:application():title() == "Hammerspoon" and win:isVisible() then
+      win:close()
+   else
+      hs.openConsole()
+   end
+end
+hs.hotkey.bind(keys.cac, "b", function() toggleConsole() end)
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
-hs.hotkey.bind(keys.cac, "b", function() hs.openConsole() end)
 
 -- iTunes
 hs.hotkey.bind(keys.c, "f3", function() hs.itunes.next() end)
