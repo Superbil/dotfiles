@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 TARGET=$HOME
-STOW=stow
+STOW=$(which stow)
 
 for ARG in $*
 do
