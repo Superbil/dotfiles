@@ -5,7 +5,8 @@ configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()
 keys = {
    c   = {'ctrl'               },
    ca  = {'ctrl', 'alt'        },
-   cac = {'cmd',  'alt', 'ctrl'}
+   cac = {'cmd',  'alt', 'ctrl'},
+   cas = {'ctrl', 'alt', 'shift'}
 }
 
 -- useful keybindings

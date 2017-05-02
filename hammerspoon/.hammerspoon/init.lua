@@ -37,6 +37,7 @@ hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8
 
 -- Full screen
 hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)
+hs.hotkey.bind(keys.ca, "p", function() pushScreen(primaryScreen:toEast(),0,0,1,1) end)
 
 function getURLFromChrome()
    return hs.osascript.applescript(
@@ -68,7 +69,7 @@ function sendToMpv()
    return false
 end
 
-hs.hotkey.bind(keys.ca, "p",
+hs.hotkey.bind(keys.cas, "p",
                function()
                   if not sendToMpv() then
                      pushScreen(primaryScreen:toEast(),0,0,1,1)
