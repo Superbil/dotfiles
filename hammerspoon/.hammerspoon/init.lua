@@ -58,6 +58,7 @@ function sendToMpv()
       local success, url, descriptor = getURLFromChrome()
       if success and string.match(url, 'youtube.com') then
          print('mpv playing ' .. url)
+         hs.notify.show("mpv", "", "Try to playing Youtube " .. url)
          s = os.execute(string.format('/usr/local/bin/mpv --fullscreen --screen 1 %s > /dev/null &', url))
          if s then
             return true
