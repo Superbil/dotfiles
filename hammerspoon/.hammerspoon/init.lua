@@ -93,7 +93,6 @@ hs.hotkey.bind(keys.cac, "y", function() imgurFromPasteboard() end)
 
 -- Spoons
 
-caff = hs.loadSpoon('Caffeine')
 
 -- Everything is fine
 hs.alert.show("Hammerspoon Config loaded")
