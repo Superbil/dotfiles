@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case "$2,$3" in
+  *)
+    /usr/bin/perl -i.bak -ne 's/^/# /, s/^# #/#/ if /^_/ .. /#/; print' "$1" ;;
+esac
