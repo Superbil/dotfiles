@@ -135,6 +135,64 @@ if [ -x $HOME/.rvm/scripts/rvm ]; then
     source $HOME/.rvm/scripts/rvm
 fi
 
+# Aliases
+
+# Useful helpers
+alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias df='df -h'            # Disk free, in gigabytes, not bytes
+alias du='du -h -c'         # Calculate total disk usage for a folder
+alias svim='sudo vim'       # Run vim as super user
+
+# Global aliases
+alias -g C='| wc -l'
+alias -g EH='|& head'
+alias -g EL='|& less'
+alias -g G='| egrep'
+alias -g H='| head'
+alias -g HL='|& head -20'
+alias -g M='| more'
+alias -g T='| tail'
+alias -g XG='| xargs egrep'
+alias -g X='| xargs'
+
+if [ -x $(which brew) ]; then
+    # Emacs on mac
+    alias brew-emacs='open `brew --prefix emacs-mac`/Emacs.app'
+    alias brew-emacs-debug='${brew-emacs} --args --debug-init'
+
+    # Homebrew
+    alias bup='brew update && brew upgrade'
+    alias bout='brew outdated'
+    alias bin='brew install'
+    alias brm='brew uninstall'
+    alias bls='brew list'
+    alias bsr='brew search'
+    alias binf='brew info'
+    alias bdr='brew doctor'
+fi
+
+# iCloud
+alias icloud='cd ~/Library/Mobile\ Documents/'
+
+# Wifi Airport tool
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+
+
+# find ip
+exip () {
+    # gather external ip address
+    echo -n "Current External IP: "
+    curl -s -m 5 http://ip.alf.nu
+}
+
+ips () {
+    # determine local IP address
+    ifconfig | grep "inet " | awk '{ print $2 }'
+}
+
+# gitignore.io
+function gi() { curl -sL http://www.gitignore.io/api/$@ ;}
+
 # Run on new shell
 fortune_say() {
     local fortune=$(which fortune)
