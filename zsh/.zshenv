@@ -14,6 +14,16 @@ if [[ "$TERM" == "dumb" ]]; then
     return
 fi
 
+# Always use UTF-8
+export LANG=en_US.UTF-8
+
+# coreutils
+BREW=/usr/local/bin/brew
+if [ -x $BREW ] && [ -x "$($BREW --prefix coreutils)" ]; then
+    export PATH="$($BREW --prefix coreutils)/libexec/gnubin:$PATH"
+    export MANPATH="$($BREW --prefix coreutils)/libexec/gnuman:$MANPATH"
+fi
+
 # setup local env
 if [[ -e $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
