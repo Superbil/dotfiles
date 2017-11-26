@@ -30,7 +30,7 @@ function toggleConsole()
       hs.openConsole()
    end
 end
-hs.hotkey.bind(keys.cac, "b", function() toggleConsole() end)
+-- hs.hotkey.bind(keys.cac, "b", function() toggleConsole() end)
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 
 -- iTunes
