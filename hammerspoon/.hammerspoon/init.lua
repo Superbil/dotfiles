@@ -57,12 +57,10 @@ hs.hotkey.bind(keys.cac, "a", function() airplanMode() end)
 
 -- Chat
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 4x4', primaryScreen) end)
-hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 2x1', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "j", function() pushGrid('0,0 2x4', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "m", function() pushGrid('0,1 2x1', primaryScreen) end)
 
 -- Left
-hs.hotkey.bind(keys.ca, "i", function() pushGrid('2,0 2x1', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "k", function() pushGrid('2,0 2x4', primaryScreen) end)
 hs.hotkey.bind(keys.ca, ",", function() pushGrid('2,1 2x1', primaryScreen) end)
 
@@ -76,6 +74,9 @@ hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8
 -- Full screen
 hs.hotkey.bind(keys.ca, "n", function() pushScreen(primaryScreen,0,0,1,1) end)
 hs.hotkey.bind(keys.ca, "p", function() pushScreen(primaryScreen:toEast(),0,0,1,1) end)
+
+hs.hotkey.bind(keys.ca, "u", function() pushGrid('0,0 1x2', primaryScreen:toEast()) end)
+hs.hotkey.bind(keys.ca, "i", function() pushGrid('1,0 1x2', primaryScreen:toEast()) end)
 
 function getURLFromChrome()
    return hs.osascript.applescript(
