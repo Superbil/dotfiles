@@ -42,6 +42,7 @@ hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
 require "imgur"
 require "airport"
 require "resize"
+require "bluetooth"
 
 -- Grid config
 hs.grid.setMargins({0, 0})
@@ -54,6 +55,7 @@ end
 -- Hotkeys
 
 hs.hotkey.bind(keys.cac, "a", function() airplanMode() end)
+hs.hotkey.bind(keys.cac, "b", function() bluetoothSwith() end)
 
 -- Chat
 hs.hotkey.bind(keys.ca, "h", function() pushGrid('0,0 4x4', primaryScreen) end)
