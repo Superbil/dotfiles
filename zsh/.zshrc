@@ -38,7 +38,6 @@ langs_plugins=(
     vagrant
     # python
     pip
-    pyenv
     pylint
     python
     # javascript
