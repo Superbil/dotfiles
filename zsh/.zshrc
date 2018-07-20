@@ -170,11 +170,14 @@ if [ -x "$(which brew)" ]; then
     alias bdr='brew doctor'
 fi
 
-# iCloud
-alias icloud='cd ~/Library/Mobile\ Documents/'
+# Only for MacOS
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    # iCloud
+    alias icloud='cd ~/Library/Mobile\ Documents/'
 
-# Wifi Airport tool
-alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+    # Wifi Airport tool
+    alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+fi
 
 
 # find ip
