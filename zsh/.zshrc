@@ -116,13 +116,6 @@ if [ -r $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
 
-# While had $HOME/perl5 eval it
-# that can install cpan without sudo
-# https://github.com/Homebrew/homebrew/wiki/Gems,-Eggs-and-Perl-Modules#perl-cpan-modules-without-sudo
-if [[ -x $HOME/perl5/lib/perl5 ]]; then
-    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-fi
-
 # Save key in keychain
 # https://github.com/sorah/envchain
 if [[ -x $(which envchain) ]]; then
