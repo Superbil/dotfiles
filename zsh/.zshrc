@@ -178,14 +178,14 @@ alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 
 
 # find ip
+myip() {
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
+
 exip () {
     # gather external ip address
     echo -n "Current External IP: "
-    if command -v jq 1>/dev/null 2>&1; then
-        curl -s -m 5 https://httpbin.org/ip | jq '.origin'
-    else
-        curl -s -m 5 https://httpbin.org/ip | grep -Po '(\d{1,3}\.){3}\d{1,3}'
-    fi
+    myip
 }
 
 ips () {
@@ -213,10 +213,6 @@ fortune_say() {
         echo "" && $fortune && echo ""
     fi
 }
-# Don't use fortune_say inside emacs
-if [[ -z "$INSIDE_EMACS" ]]; then
-    fortune_say
-fi
 
 upgrade_homebrew() {
     if [ -n $SSL_CERT_FILE ]; then
@@ -225,6 +221,7 @@ upgrade_homebrew() {
     brew update && brew upgrade && brew cleanup
 }
 
-myip() {
-    dig +short myip.opendns.com @resolver1.opendns.com
-}
+# Don't use fortune_say inside emacs
+if [[ -z "$INSIDE_EMACS" ]]; then
+    fortune_say
+fi
