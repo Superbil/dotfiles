@@ -181,7 +181,11 @@ alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 exip () {
     # gather external ip address
     echo -n "Current External IP: "
-    curl -s -m 5 http://ip.alf.nu
+    if command -v jq 1>/dev/null 2>&1; then
+        curl -s -m 5 https://httpbin.org/ip | jq '.origin'
+    else
+        curl -s -m 5 https://httpbin.org/ip | grep -Po '(\d{1,3}\.){3}\d{1,3}'
+    fi
 }
 
 ips () {
