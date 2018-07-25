@@ -34,7 +34,7 @@ langs_plugins=(
     gem
     rake
     ruby
-    rvm
+    rbenv
     vagrant
     # python
     pip
@@ -120,11 +120,6 @@ fi
 # https://github.com/sorah/envchain
 if [[ -x $(which envchain) ]]; then
     export `envchain homebrew env | grep GITHUB_API_TOKEN`
-fi
-
-# Use rbenv
-if command -v rbenv 1>/dev/null 2>&1; then
-    eval "$(rbenv init -)"
 fi
 
 # Aliases
