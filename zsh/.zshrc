@@ -119,7 +119,7 @@ fi
 # Save key in keychain
 # https://github.com/sorah/envchain
 if [[ -x $(which envchain) ]]; then
-    export `envchain homebrew env | grep GITHUB_API_TOKEN`
+    export HOMEBREW_GITHUB_API_TOKEN=$(envchain homebrew env | grep GITHUB_API_TOKEN)
 fi
 
 # Aliases
