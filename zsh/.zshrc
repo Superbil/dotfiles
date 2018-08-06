@@ -17,7 +17,6 @@ base_plugins=(
     git-flow-avh
     gnu-utils
     history
-    svn
     sudo
     urltools
     z
@@ -32,18 +31,12 @@ done
 langs_plugins=(
     # ruby
     gem
-    rake
-    ruby
     rbenv
-    vagrant
     # python
     pip
     pylint
     python
     # javascript
-    node
-    npm
-    nodejs # https://github.com/poying/zsh-nodejs-plugin
     yarn
 )
 
@@ -52,8 +45,6 @@ darwin_plugins=(
     brew
     # show time at prompt_char
     emoji-clock
-    # Forklift.app
-    forklift
     # useful for OS X
     osx
     # cocoapods
