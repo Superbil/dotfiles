@@ -84,6 +84,6 @@
 [format]
 	pretty = fuller
 [include]
-	path =~/.gitconfig-local
+	path = ~/.gitconfig-local
 [merge]
 	conflictStyle = diff3
