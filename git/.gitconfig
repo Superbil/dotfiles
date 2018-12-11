@@ -72,6 +72,8 @@
 	fh = flow hotfix
 	fs = flow support
 	fv = flow version
+	# https://www.gitignore.io/
+	ignore-io = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [branch]
 	autosetupmerge = true
 	trustExitCode = true
