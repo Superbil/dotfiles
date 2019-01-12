@@ -111,6 +111,7 @@ fi
 # https://github.com/sorah/envchain
 if [[ -x $(which envchain) ]]; then
     # envchain --set homebrew GITHUB_API_TOKEN
+    # envchain --set homebrew HOMEBREW_GITHUB_API_TOKEN
     export $(envchain homebrew env | grep GITHUB_API_TOKEN)
 fi
 
