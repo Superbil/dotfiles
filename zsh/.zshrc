@@ -53,6 +53,7 @@ darwin_plugins=(
     xcode
     # docker
     docker
+    docker-machine
     docker-compose
     vagrant
     # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
