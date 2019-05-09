@@ -19,9 +19,12 @@ export LANG=en_US.UTF-8
 
 # coreutils
 BREW=/usr/local/bin/brew
-if [ -x $BREW ] && [ -x "$($BREW --prefix coreutils)" ]; then
-    export PATH="$($BREW --prefix coreutils)/libexec/gnubin:$PATH"
-    export MANPATH="$($BREW --prefix coreutils)/libexec/gnuman:$MANPATH"
+if [ -x $BREW ]; then
+    COREUTILS_PATH="$($BREW --prefix coreutils)"
+    if [ -x $COREUTILS_PATH ]; then
+        export PATH=$COREUTILS_PATH/libexec/gnubin:$PATH
+        export MANPATH=$COREUTILS_PATH/libexec/gnuman:$MANPATH
+    fi
 fi
 
 # setup local env
