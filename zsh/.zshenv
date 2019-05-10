@@ -14,17 +14,10 @@ if [[ "$TERM" == "dumb" ]]; then
     return
 fi
 
-# Always use UTF-8
-export LANG=en_US.UTF-8
-
-# coreutils
-BREW=/usr/local/bin/brew
-if [ -x $BREW ]; then
-    COREUTILS_PATH="$($BREW --prefix coreutils)"
-    if [ -x $COREUTILS_PATH ]; then
-        export PATH=$COREUTILS_PATH/libexec/gnubin:$PATH
-        export MANPATH=$COREUTILS_PATH/libexec/gnuman:$MANPATH
-    fi
+# https://github.com/sorin-ionescu/prezto/blob/master/runcoms/zshenv
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
 # local script folder
