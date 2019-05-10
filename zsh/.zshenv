@@ -27,6 +27,9 @@ if [ -x $BREW ]; then
     fi
 fi
 
+# local script folder
+[ -d ${HOME}/bin ] && PATH=${HOME}/bin:$PATH
+
 # setup local env
 if [[ -e $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
