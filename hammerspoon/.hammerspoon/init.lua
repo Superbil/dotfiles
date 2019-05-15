@@ -104,7 +104,7 @@ function sendToMpv()
       if success and string.match(url, 'youtube.com') then
          print('mpv playing ' .. url)
          hs.notify.show("mpv", "", "Try to playing Youtube " .. url)
-         s = os.execute(string.format('/usr/local/bin/mpv --fullscreen --screen 1 %s > /dev/null &', url))
+         s = os.execute(string.format('/usr/local/bin/mpv --really-quiet --fullscreen --screen 1 %s &', url))
          if s then
             return true
          else
