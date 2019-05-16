@@ -24,6 +24,6 @@ fi
 [ -d ${HOME}/bin ] && PATH=${HOME}/bin:$PATH
 
 # setup local env
-if [[ -e $HOME/.zshenv-local ]]; then
+if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
 fi
