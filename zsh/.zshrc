@@ -171,7 +171,7 @@ ips () {
 function gi() { curl -sL http://www.gitignore.io/api/$@ ;}
 
 # Run on new shell
-fortune_say() {
+_fortune_say() {
     local fortune=$(which fortune)
     local cowsay=$(which cowsay)
     [ ! -e $fortune ] && return
@@ -197,5 +197,5 @@ upgrade_homebrew() {
 
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
-    fortune_say
+    _fortune_say
 fi
