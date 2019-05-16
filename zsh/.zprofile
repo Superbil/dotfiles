@@ -23,14 +23,16 @@ if [ -x "/usr/libexec/path_helper" ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
-# I use emacs-mac
-EC_PATH=$(brew --prefix emacs-mac)/bin/emacsclient
-if [ -x $EC_PATH ]; then
-    EC_ARGS="${EC_PATH} -c"
-    if [ -z $SSH_CLIENT ]; then
-        export EDITOR="${EC_ARGS}"
-    else
-        export EDITOR="${EC_ARGS} -t"
+if (( $+commands[brew] )); then
+    # I use emacs-mac
+    EC_PATH=$(brew --prefix emacs-mac)/bin/emacsclient
+    if [ -x $EC_PATH ]; then
+        EC_ARGS="${EC_PATH} -c"
+        if [ -z $SSH_CLIENT ]; then
+            export EDITOR="${EC_ARGS}"
+        else
+            export EDITOR="${EC_ARGS} -t"
+        fi
     fi
 fi
 
