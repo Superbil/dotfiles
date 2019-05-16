@@ -10,8 +10,6 @@ COMPLETION_WAITING_DOTS="true"
 
 base_plugins=(
     colorize
-    copydir
-    copyfile
     extract
     git
     git-flow-avh
