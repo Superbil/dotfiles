@@ -152,17 +152,17 @@ fi
 
 
 # find ip
-myip() {
+function myip() {
     dig +short myip.opendns.com @resolver1.opendns.com
 }
 
-exip () {
+function exip () {
     # gather external ip address
     echo -n "Current External IP: "
     myip
 }
 
-ips () {
+function ips () {
     # determine local IP address
     ifconfig | grep "inet " | awk '{ print $2 }'
 }
@@ -171,7 +171,7 @@ ips () {
 function gi() { curl -sL http://www.gitignore.io/api/$@ ;}
 
 # Run on new shell
-_fortune_say() {
+function _fortune_say() {
     local fortune=$(which fortune)
     local cowsay=$(which cowsay)
     [ ! -e $fortune ] && return
@@ -188,7 +188,7 @@ _fortune_say() {
     fi
 }
 
-upgrade_homebrew() {
+function upgrade_homebrew() {
     if [ -n $SSL_CERT_FILE ]; then
         unset SSL_CERT_FILE
     fi
