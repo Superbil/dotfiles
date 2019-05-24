@@ -9,32 +9,21 @@ set -s escape-time 0
 # Theme
 setw -g window-status-format ' #I#[fg=yellow]#F#[default]#W '
 setw -g window-status-current-format ' #I#[fg=yellow]#F#[default]#W '
-setw -g window-status-current-bg colour12
-setw -g window-status-current-fg colour15
-setw -g window-status-current-attr bright
-setw -g window-status-bg black
-setw -g window-status-fg white
-setw -g window-status-attr bright
-set -g message-fg white
-set -g message-bg colour5
-set -g message-attr bright
-set -g pane-active-border-bg default
-set -g pane-active-border-fg colour12
-set -g pane-border-bg default
-set -g pane-border-fg default
+# Style
+setw -g window-status-current-style fg=colour12,bg=colour15,bright
+setw -g window-status-current-style fg=white,bg=black,bright
+set -g message-style fg=white,bg=colour5,bright
+set -g pane-active-border-style fg=colour12,bg=default
+set -g pane-border-style fg=default,bg=default
+set -g status-style fg=white,bg=black,bright
 
 ## Status bar
-set -g status-bg black
-set -g status-fg white
-set -g status-attr bright
 set -g status-interval 5
 set -g status-justify centre
 set -g status-left-length 100
 set -g status-right-length 100
-set -g status-right '#[fg=green][%m/%d %H:%M:%S]#[default]'
 set -g status-left '#[bg=colour20] > #I #W < #[bg=colour32] [#P] #T #[default] '
-# set -g status-right '#[bg=colour32] #(whoami)@#h #[bg=colour20] #(date \"+%Y.%m.%d %I:%M %p\") '
-set -g status-right '#{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
+set -g status-right '#[bg=colour32] #{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} #[bg=colour20] %H:%M '
 
 # monitor activity
 setw -g monitor-activity off
