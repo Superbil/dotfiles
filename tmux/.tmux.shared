@@ -33,7 +33,8 @@ set -g status-left-length 100
 set -g status-right-length 100
 set -g status-right '#[fg=green][%m/%d %H:%M:%S]#[default]'
 set -g status-left '#[bg=colour20] > #I #W < #[bg=colour32] [#P] #T #[default] '
-set -g status-right '#[bg=colour32] #(whoami)@#h #[bg=colour20] #(date \"+%Y.%m.%d %I:%M %p\") '
+# set -g status-right '#[bg=colour32] #(whoami)@#h #[bg=colour20] #(date \"+%Y.%m.%d %I:%M %p\") '
+set -g status-right '#{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
 
 # monitor activity
 setw -g monitor-activity off
