@@ -23,7 +23,7 @@ set -g status-justify centre
 set -g status-left-length 100
 set -g status-right-length 100
 set -g status-left '#[bg=colour20] > #I #W < #[bg=colour32] [#P] #T #[default] '
-set -g status-right '#[bg=colour32] #{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} #[bg=colour20] %H:%M '
+set -g status-right '#[bg=colour20] %Y.%m.%d %I:%M %p'
 
 # monitor activity
 setw -g monitor-activity off
