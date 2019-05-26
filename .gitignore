@@ -1,0 +1,4 @@
+# emacs tramp
+.tramp_history
+# ipython
+python/.ipython/profile_default/
