@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # TRAMP mode
 # http://www.emacswiki.org/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
