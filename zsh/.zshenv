@@ -21,9 +21,6 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# local script folder
-[ -d ${HOME}/bin ] && PATH=${HOME}/bin:$PATH
-
 # setup local env
 if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
