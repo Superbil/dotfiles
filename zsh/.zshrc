@@ -75,7 +75,7 @@ if [[ -z "$INSIDE_EMACS" ]]; then
         else
             # If is ssh login, don't use emoji
             if [[ "$(uname -s)" == "Darwin" && -z "$SSH_TTY" ]]; then
-                echo "👻 ";
+                echo "👻";
             else
                 echo "$"
             fi
