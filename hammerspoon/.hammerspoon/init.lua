@@ -1,10 +1,10 @@
 -- Variable config
 hs.window.animationDuration = 0
 hs.window.setShadows(false)
-primaryScreen = hs.screen.primaryScreen()
+local primaryScreen = hs.screen.primaryScreen()
 
 -- auto reload config
-configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()
+local configFileWatcher = hs.pathwatcher.new(hs.configdir, hs.reload):start()
 
 -- keyboard modifiers for bindings
 keys = {
