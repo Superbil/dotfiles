@@ -136,8 +136,48 @@ hs.hotkey.bind(keys.ca, "down", function() hs.grid.pushWindowDown() end)
 
 hs.hotkey.bind(keys.cac, "y", function() imgurFromPasteboard() end)
 
--- Spoons
+-- Org-time
 
+local orgTimeBar = hs.menubar.new()
+local orgTimeState = false
+
+function orgImage()
+   local orgImage = {
+      enable = '🏃‍♂️',
+      disable = '😴'
+   }
+   if orgTimeState then
+      return orgImage["enable"]
+   else
+      return orgImage["disable"]
+   end
+end
+
+orgTimeBar:setTitle(orgImage())
+orgTimeBar:setMenu({{
+         title = 'Invert behaviour', fn = nil
+}})
+
+function updateOrgIcon()
+   orgTimeBar:setTitle(orgImage())
+end
+
+function orgClockIn(eventName, params)
+   hs.printf(params['title'])
+   orgTimeState = true
+   updateOrgIcon()
+end
+
+function orgClockOut(eventName, params)
+   hs.printf(params['title'])
+   orgTimeState = false
+   updateOrgIcon()
+end
+
+hs.urlevent.bind('orgClockIn', orgClockIn)
+hs.urlevent.bind('orgClockOut', orgClockOut)
+
+-- Spoons
 
 -- Everything is fine
 hs.alert.show("Hammerspoon Config loaded")
