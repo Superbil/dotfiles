@@ -1,3 +1,3 @@
-* README
+* ZSH
 
 This zsh configure work with [[https://github.com/robbyrussell/oh-my-zsh][oh-my-zsh]].
