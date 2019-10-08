@@ -1,197 +1,579 @@
-## brew installs always use
-install bash
-install coreutils
-install git
-install gnupg
-install z
-install zsh
+tap "dart-lang/dart"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/emacs"
+tap "homebrew/python"
+tap "homebrew/science"
+tap "homebrew/services"
+tap "homebrew/versions"
+tap "linode/cli"
+tap "linux-noah/noah"
+tap "miderwong/flutter"
+tap "railwaycat/emacsmacport"
+tap "superbil/cookbook"
+tap "superbil/protobuf"
+tap "superbil/superbil-mac-app"
+tap "thoughtbot/formulae"
+tap "uranusjr/pythonup"
 
-## install newer version
-tap homebrew/dupes
-install grep
-
-## brew installs other need
-install android-sdk
-install ascii
-install aspell
-install atk
-install autossh
-install bazaar
-install bdw-gc
-install boost
-install brew-gem
-install cabextract
-install cairo
-install class-dump
-install clens
-install cloc
-install cmake
-install cpanminus
-install cscope
-install curl   --with-ares
-install d-bus
-install devtodo
-install dialog
-install dirmngr
-install doxygen
-install editorconfig
-install emacs-clang-complete-async
-install exiftool
-install flac
-install fossil
-install fribidi
-install ghc
-install ghostscript
-install git-extras
-install git-flow-avh
-install gnome-common
-install gnu-getopt
-install gnupg2
-install gpg-agent
-install graphviz   --with-bindings  --with-app  --with-freetype
-install grc
-install growly
-install guile
-install harfbuzz
-install hg-flow
-install hub
-install icu4c
-install ilmbase
-install imagemagick   --with-libtiff  --with-openexr  --with-x11
-install intltool
-install isl
-install jansson
-install jasper
-install jenkins
-install lame
-install lesspipe
-install llvm --with-all-targets --with-clang --with-python --with-lld
-install lynx
-install lzo
-install markdown
-install mg
-install mpfr
-install mtr
-install mutt
-# install nu
-install node
-install openexr
-install openssl
-install ossp-uuid
-install p11-kit
-install pcre
-install pdfcrack
-install portmidi
-install putty
-install pyenv
-install qprint
-install qt
-install qt5
-install repo
-install sbt
-install scons
-install sdl
-install sdl_image
-install sdl_mixer
-install sdl_ttf
-install shiboken
-install signing-party --with-rename-pgpring
-install sip
-install smlnj
-install sphinx
-install sqlite
-install ssh-copy-id
-install stow
-install swig
-install tbb
-install texi2html
-install the_silver_searcher
-install tig
-install tmux
-install tokyo-cabinet
-install transmission
-install tree
-install ttyrec
-install ttytter
-install uncrustify
-install webp
-install wxmac
-install x264
-install xctool
-install xvid
-install xz
-install yasm
-install youtube-dl
-
-## brew install custom
-tap superbil/protobuf
-install protobuf-objc
-
-## editor
-tap railwaycat/emacsmacport
-install emacs-mac --icon-modern --keep-ctags --with-dbus --with-gnutls --with-imagemagick --with-xml2
-
-## set up brew cask
-tap phinze/homebrew-cask
-install brew-cask
-tap caskroom/versions
-
-## brew cask install install apps
-#cask install xquartz
-cask install Handbrake
-cask install ImageAlpha
-cask install keyremap4macbook-mountainlion
-cask install Knock
-cask install LICEcap
-cask install MultiBit
-cask install Nally
-cask install Notational-Velocity
-cask install Picasa
-cask install Sparrow
-cask install adium
-cask install airserver
-cask install alfred
-cask install audacity
-cask install bettertouchtool
-cask install charles
-cask install clipmenu
-cask install colloquy
-cask install cyberduck
-cask install dictunifier
-cask install divvy
-cask install dropbox
-cask install evernote
-cask install freemind
-cask install Flux
-cask install genymotion
-cask install google-drive
-cask install google-earth
-cask install grandperspective
-cask install skype
-cask install spotify
-cask install torBrowser
-cask install VLC
-cask install wedge
-cask install Welly
-cask install YoruFukurou
-
-## brew cask install dev tools
-#cask install Slate
-cask install Typinator
-cask install anvil
-cask install crashlytics
-cask install dash
-cask install iFunBox
-cask install postgres
-cask install sourcetree
-cask install sqlite-database-browser
-cask install sublime-text3
-cask install virtualbox
-
-## brew cask install browsers
-cask install firefox
-cask install google-chrome
-cask install opera-next
-
-## link some thing
-cask alfred link
+# Search tool like grep, but optimized for programmers
+brew "ack"
+# Graphical system information display for macOS
+brew "archey"
+# List ASCII idiomatic names and octal/decimal code-point forms
+brew "ascii"
+# Spell checker with better logic than ispell
+brew "aspell"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# GNOME accessibility toolkit
+brew "atk"
+# Automatic configure script builder
+brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Automatically restart SSH sessions and tunnels
+brew "autossh"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Garbage collector for C and C++
+brew "bdw-gc"
+# GNU binary tools for native development
+brew "binutils", link: true
+# Parser generator
+brew "bison"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c"
+# Collection of portable C++ source libraries
+brew "boost"
+# Roguelike game
+brew "brogue"
+# Extract files from Microsoft cabinet files
+brew "cabextract"
+# Real-time data compression library
+brew "lzo"
+# SSL/TLS cryptography library
+brew "openssl"
+# Decentralized dependency manager for Cocoa
+brew "carthage"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# GNU Emacs text editor
+brew "emacs", link: false
+# Emacs dependency management
+brew "cask"
+# Navigation scripting and testing tool for PhantomJS
+brew "casperjs"
+# Hyperfast web frontend for Git repositories written in C
+brew "cgit"
+# Collection of LLDB commands to assist debugging iOS apps
+brew "chisel"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Library to help port code from OpenBSD to other operating systems
+brew "clens"
+# Library for handling page faults in user mode
+brew "libsigsegv"
+# GNU CLISP, a Common Lisp implementation
+brew "clisp"
+# Statistics utility to count lines of code
+brew "cloc"
+# Common Lisp implementation with a long history
+brew "clozure-cl"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Configurable talking characters in ASCII art
+brew "cowsay"
+# Get, unpack, build, and install modules from CPAN
+brew "cpanminus"
+# GNU awk utility
+brew "gawk"
+# GNU implementation of the famous stream editor
+brew "gnu-sed", args: ["with-default-names"]
+# GNU grep, egrep and fgrep
+brew "grep", args: ["with-default-names"]
+# Generic library support script
+brew "libtool", args: ["universal"]
+# Utility for directing compilation
+brew "make"
+# Tool for building toolchains
+brew "crosstool-ng"
+# Tool for browsing source code
+brew "cscope"
+# Reimplementation of ctags(1)
+brew "ctags"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Command-line shell where you can execute Cypher against Neo4j
+brew "cypher-shell"
+# Message bus system, providing inter-application communication
+brew "dbus"
+# GNU data recovery tool
+brew "ddrescue"
+# Command-line task lists
+brew "devtodo"
+# Display user-friendly message boxes from shell scripts
+brew "dialog"
+# File comparison utilities
+brew "diffutils"
+# X.509 and CMS library
+brew "libksba"
+# GNU Portable THreads
+brew "pth"
+# Server for managing certificate revocation lists
+brew "dirmngr"
+# Convert ASCII diagrams into proper bitmap graphics
+brew "ditaa"
+# Standard SGML representation system for technical documents
+brew "docbook"
+# Convert DocBook to UNIX manpages and GNU TeXinfo
+brew "docbook2x"
+# Create Docker hosts locally and on cloud providers
+brew "docker-machine", link: false
+# Generate documentation for several programming languages
+brew "doxygen"
+# Drone CLI
+brew "drone-cli"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# Maintain consistent coding style between multiple editors
+brew "editorconfig"
+# Generate scripting interfaces to C/C++ code
+brew "swig"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Emacs plugin using libclang to complete C/C++ code
+brew "emacs-clang-complete-async"
+# Secure your credentials in environment variables
+brew "envchain"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# ISO AAC audio encoder
+brew "faac"
+# Scan log files and ban IPs showing malicious signs
+brew "fail2ban"
+# Free lossless audio codec
+brew "flac"
+# High quality MPEG Audio Layer III (MP3) encoder
+brew "lame"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Tool for downloading RTMP streaming media
+brew "rtmpdump"
+# High-performance, high-quality MPEG-4 video library
+brew "xvid"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Distributed software configuration management
+brew "fossil"
+# Libraries to talk to Microsoft SQL Server & Sybase
+brew "freetds@0.91", link: true
+# Library to extract data from Excel .xls files
+brew "freexl"
+# C library for the arithmetic of high precision complex numbers
+brew "libmpc"
+# User-space file system for interacting with Google Cloud
+brew "gcsfuse"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Geometry Engine
+brew "geos"
+# Access GitHub's .gitignore boilerplates
+brew "gibo"
+# Command-line utility for uploading Gists
+brew "gist"
+# Distributed revision control system
+brew "git"
+# GitHub-like contributions calendar but on the command-line
+brew "git-cal"
+# Small git utilities
+brew "git-extras"
+# Command-line option parsing utility
+brew "gnu-getopt"
+# AVH edition of git-flow
+brew "git-flow-avh"
+# Incremental merge for git
+brew "git-imerge"
+# Git extension for versioning large files
+brew "git-lfs"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Bash-tool to store the private data inside a git repo
+brew "git-secret"
+# Source code tag system
+brew "global"
+# GNU multiple precision arithmetic library
+brew "gmp@4"
+# Core files for GNOME
+brew "gnome-common"
+# C code prettifier
+brew "gnu-indent"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# GNU implementation of which utility
+brew "gnu-which", args: ["with-default-names"]
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# GPG key agent
+brew "gpg-agent"
+# Redirect command output to a growl notification
+brew "growly"
+# SASL library command-line interface
+brew "gsasl"
+# GSettings schemas for desktop components
+brew "gsettings-desktop-schemas"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
+# Automatically generate simple man pages
+brew "help2man"
+# Fallback theme for FreeDesktop.org icon themes
+brew "hicolor-icon-theme"
+# Convert source code to formatted text with syntax highlighting
+brew "highlight"
+# Command-line accounting tool
+brew "hledger"
+# Add GitHub support to git on the command-line
+brew "hub"
+# Configurable static site generator
+brew "hugo"
+# GNOME XML library
+brew "libxml2"
+# USB multiplexor daemon for iPhone and iPod Touch devices
+brew "usbmuxd", args: ["HEAD"]
+# Library to communicate with iOS devices natively
+brew "libimobiledevice", args: ["HEAD"]
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
+# Cross-platform library for communicating with iOS devices
+brew "ideviceinstaller"
+# Display an interface's bandwidth usage
+brew "iftop"
+# OpenEXR ILM Base libraries (high dynamic-range image file format)
+brew "ilmbase"
+# Database of common MIME types
+brew "shared-mime-info"
+# High dynamic-range image file format
+brew "openexr"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# String tool
+brew "intltool"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
+# Peer-to-peer hypermedia protocol
+brew "ipfs"
+# C library for encoding, decoding, and manipulating JSON
+brew "jansson"
+# Library for manipulating JPEG-2000 images
+brew "jasper"
+# JBIG2 decoder and library (for monochrome documents)
+brew "jbig2dec"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Platform built on V8 to build network applications
+brew "node"
+# JSON parser and validator with a CLI
+brew "jsonlint"
+# Command-line interface to Keybase.io
+brew "keybase"
+# Build tool for Clojure
+brew "leiningen"
+# Input filter for the pager less
+brew "lesspipe"
+# Configuration file processing library
+brew "libconfig"
+# Access DVDs as block devices without the decryption
+brew "libdvdcss"
+# ELF object file access library
+brew "libelf"
+# Library for handling OpenGL function pointer management
+brew "libepoxy"
+# Library for USB device access
+brew "libusb-compat"
+# Gphoto2 digital camera library
+brew "libgphoto2"
+# Lossy speech compression library
+brew "libgsm"
+# Library for manipulation of the macOS .icns resource format
+brew "libicns", args: ["universal"]
+# Allows SpatiaLite to support ST_MakeValid() like PostGIS
+brew "liblwgeom"
+# C library for high precision complex numbers
+brew "libmpc@0.8"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# VisualOn AAC encoder library
+brew "libvo-aacenc"
+# YAML Parser
+brew "libyaml"
+# Curses-based tool for viewing and analyzing log files
+brew "lnav"
+# Text-based web browser
+brew "lynx"
+# Data compression library
+brew "lzlib"
+# Swiss Army Knife for macOS
+brew "m-cli"
+# Keep your Mac's application settings in sync
+brew "mackup"
+# Swiss Army knife of email handling
+brew "mailutils"
+# Creates dependencies in makefiles
+brew "makedepend"
+# Text-to-HTML conversion tool
+brew "markdown"
+# Mac App Store command-line interface
+brew "mas"
+# Scalable distributed version control system
+brew "mercurial"
+# Merge XCode project files in git
+brew "mergepbx"
+# Small Emacs-like editor
+brew "mg"
+# Dependency manager that installs and runs Swift command-line tool packages
+brew "mint"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# CLI for Apple's Private (Closed) Mobile Device Framework
+brew "mobiledevice"
+# Generate Objective-C & Swift classes from your Core Data model
+brew "mogenerator"
+# Remote terminal application
+brew "mosh"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# Tail multiple files in one terminal simultaneously
+brew "multitail"
+# Implements SNMP v1, v2c, and v3, using IPv4 and IPv6
+brew "net-snmp"
+# Single-player roguelike video game
+brew "nethack"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Port scanning utility for large networks
+brew "nmap"
+# Manage multiple Node.js versions
+brew "nvm"
+# Optimized BLAS library
+brew "openblas"
+# Simplified-traditional Chinese conversion tool
+brew "opencc"
+# ISO-C API and CLI for generating UUIDs
+brew "ossp-uuid"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Package manager in the style of Arch's pacman
+brew "pacapt"
+# PDF files password cracker
+brew "pdfcrack"
+# Python dependency management tool
+brew "pipenv"
+# Library like getopt(3) with a number of enhancements
+brew "popt"
+# Cross-platform library for real-time MIDI I/O
+brew "portmidi"
+# Show ps output as a tree
+brew "pstree"
+# Implementation of Telnet and SSH
+brew "putty"
+# Encoder and decoder for quoted-printable encoding
+brew "qprint"
+# QR Code generation
+brew "qrencode"
+# Ruby version manager
+brew "rbenv"
+# Repository tool for Android development
+brew "repo"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Lisp installer and launcher for major environments
+brew "roswell"
+# Utility that provides fast incremental file transfer
+brew "rsync"
+# Safe, concurrent, practical language
+brew "rust"
+# Backends for scanner access
+brew "sane-backends"
+# Steel Bank Common Lisp system
+brew "sbcl"
+# Substitute for classic 'make' tool with autoconf/automake functionality
+brew "scons"
+# Terminal multiplexer with VT100/ANSI terminal emulation
+brew "screen"
+# Low-level access to audio, keyboard, mouse, joystick and graphics
+brew "sdl"
+# Image file loading library
+brew "sdl_image"
+# Sample multi-channel audio mixer library
+brew "sdl_mixer"
+# Library for using TrueType fonts in SDL applications
+brew "sdl_ttf"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# CLI and dbus interface for WhisperSystems/libsignal-service-java
+brew "signal-cli"
+# Fork/variant of Nethack
+brew "slashem"
+# SMART hard drive monitoring
+brew "smartmontools"
+# Add a public key to a remote machine's authorized_keys file
+brew "ssh-copy-id"
+# File system client based on SSH File Transfer Protocol
+brew "sshfs"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# CLI for extracting streams from various websites to a video player
+brew "streamlink"
+# Plugin and runtime library for using protobuf with Swift
+brew "swift-protobuf"
+# Formatting tool for reformatting Swift code
+brew "swiftformat"
+# Open source continuous file synchronization application
+brew "syncthing"
+# Rich and complete approach to parallelism in C++
+brew "tbb"
+# User interface to the TELNET protocol (built from macOS Sierra sources)
+brew "telnet"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Powerful free data recovery utility
+brew "testdisk"
+# Convert TeXinfo files to HTML
+brew "texi2html"
+# Official documentation format of the GNU project
+brew "texinfo"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Lightweight database library
+brew "tokyo-cabinet"
+# CLI tool that moves files or folder to the trash
+brew "trash"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Terminal interaction recorder and player
+brew "ttyrec"
+# Source code beautifier
+brew "uncrustify"
+# Bi-directional conversion between UTF-8 and various ASCII flavors
+brew "uni2ascii"
+# Fork of Nethack
+brew "unnethack"
+# Extract, view, and test RAR archives
+brew "unrar"
+# Clean C library for processing UTF-8 Unicode data
+brew "utf8proc"
+# Pager/text based browser
+brew "w3m"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Command-line client for WebSockets
+brew "websocat"
+# Internet file retriever
+brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
+# Cross-platform C++ GUI toolkit (wxWidgets for macOS)
+brew "wxmac"
+# C++ search engine library
+brew "xapian"
+# Drop-in replacement for xcodebuild with a few extra features
+brew "xctool"
+# XML command-line utilities
+brew "xmlstarlet"
+# JavaScript package manager
+brew "yarn"
+# Modular BSD reimplementation of NASM
+brew "yasm"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+# Tracks most-used directories to make cd smarter
+brew "z"
+# High-performance, asynchronous messaging library
+brew "zeromq"
+# UNIX shell (command interpreter)
+brew "zsh"
+# The Dart SDK
+brew "dart-lang/dart/dart"
+# Darwin subsystem for Linux (Bash on macOS)
+brew "linux-noah/noah/noah"
+# Homebrew shell for Flutter
+brew "miderwong/flutter/flutter"
+# YAMAMOTO Mitsuharu's Mac port of GNU Emacs
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-dbus", "with-modern-icon", "with-modules", "with-xml2"]
+brew "superbil/protobuf/protobuf-objc"
+# management suite for dotfiles
+brew "thoughtbot/formulae/rcm"
+mas "Affinity Photo", id: 824183456
+mas "Airmail", id: 918858936
+mas "APNS-Tool", id: 963558865
+mas "BetterSnapTool", id: 417375580
+mas "CalendarBar", id: 419329142
+mas "CallPad", id: 932941515
+mas "Canopy", id: 1419224245
+mas "Carousel", id: 437548184
+mas "CHM Reader Pro", id: 682388138
+mas "Civilization V: Campaign Edition", id: 439924718
+mas "CleanMyDrive 2", id: 523620159
+mas "ColorSnapper", id: 418176775
+mas "com.linebreak.CloudAppMacOSX", id: 417602904
+mas "DeathSpank: The Baconing", id: 449712069
+mas "DeathSpank: Thongs Of Virtue", id: 478381352
+mas "Disk Space Analyzer", id: 446243721
+mas "Duplicate Photos Fixer Pro", id: 963642514
+mas "Earth 3D", id: 476566660
+mas "GarageBand", id: 408980954
+mas "GitStatusCheck", id: 859811997
+mas "Growl", id: 467939042
+mas "HEIC Converter", id: 1294126402
+mas "iCoinTicker", id: 1248168577
+mas "iHosts", id: 1102004240
+mas "iMovie", id: 408981434
+mas "iThoughtsX", id: 720669838
+mas "Keynote", id: 409183694
+mas "KKBOX", id: 1105332179
+mas "LightBlue", id: 639944780
+mas "LINE", id: 539883307
+mas "Liya", id: 455484422
+mas "Markdown", id: 727484953
+mas "Marked", id: 448925439
+mas "Memory Clean", id: 451444120
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Noizio", id: 928871589
+mas "Numbers", id: 409203825
+mas "OneShot", id: 892334975
+mas "Output", id: 435867551
+mas "Pages", id: 409201541
+mas "PortsMonitor", id: 508288588
+mas "Reeder", id: 439845554
+mas "Simplenote", id: 692867256
+mas "Slack", id: 803453959
+mas "Smart JSON Editor", id: 1268962404
+mas "Sparkbox", id: 488652149
+mas "Sunrise Calendar", id: 886106985
+mas "Swiftify for Xcode", id: 1183412116
+mas "Telegram", id: 747648890
+mas "The Unarchiver", id: 425424353
+mas "Translate Tab", id: 458887729
+mas "Trello", id: 1278508951
+mas "Tweetbot", id: 1384080005
+mas "TweetDeck", id: 485812721
+mas "TweetRain", id: 944275813
+mas "Voila", id: 407741870
+mas "Wire", id: 931134707
+mas "WireGuard", id: 1451685025
+mas "Xliffie", id: 961651406

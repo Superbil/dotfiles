@@ -3,7 +3,7 @@
 * backup homebrew
 
 ````
-./backup_homebrew.sh > Brewfile
+brew bundle dump --describe --no-restart
 ````
 
 * restore homebrew
