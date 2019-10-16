@@ -156,7 +156,8 @@ fi
 # find ip
 function myip() {
     # dig +short opendns.com @resolver1.opendns.com
-    curl ifconfig.me
+    curl -4 ifconfig.co # force use ipv4
+    # curl ifconfig.me
 }
 
 function exip () {
