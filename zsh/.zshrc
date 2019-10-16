@@ -155,7 +155,8 @@ fi
 
 # find ip
 function myip() {
-    dig +short myip.opendns.com @resolver1.opendns.com
+    # dig +short opendns.com @resolver1.opendns.com
+    curl ifconfig.me
 }
 
 function exip () {
