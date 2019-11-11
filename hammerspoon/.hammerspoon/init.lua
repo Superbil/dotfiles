@@ -163,13 +163,13 @@ function updateOrgIcon()
 end
 
 function orgClockIn(eventName, params)
-   hs.printf(params['title'])
+   -- hs.printf(params['title'])
    orgTimeState = true
    updateOrgIcon()
 end
 
 function orgClockOut(eventName, params)
-   hs.printf(params['title'])
+   -- hs.printf(params['title'])
    orgTimeState = false
    updateOrgIcon()
 end
