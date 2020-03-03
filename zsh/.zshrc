@@ -66,8 +66,10 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# setup prompt_char to a burger, yummy
+# Setup prompt_char to a ghost (in shell).
 # don't let it work inside emacs
+# Sometime, change PS1 style to emoji-clock to show less
+# e.g. PS1='$(emoji-clock) '
 if [[ -z "$INSIDE_EMACS" ]]; then
     function prompt_char {
         if [ $UID -eq 0 ]; then
