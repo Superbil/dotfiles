@@ -198,7 +198,7 @@ function upgrade_homebrew() {
     if [ -n $SSL_CERT_FILE ]; then
         unset SSL_CERT_FILE
     fi
-    brew update && brew upgrade && brew cleanup
+    brew update && brew upgrade
 }
 
 # Don't use fortune_say inside emacs
