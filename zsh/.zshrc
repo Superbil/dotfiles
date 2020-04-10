@@ -18,6 +18,7 @@ base_plugins=(
     sudo
     urltools
     z
+    autoenv
 )
 
 for custom_plugin in $ZSH/custom/plugins/* ; do
