@@ -83,8 +83,6 @@
 	auto = 0
 [format]
 	pretty = fuller
-[include]
-	path = ~/.gitconfig-local
 [merge]
 	conflictStyle = diff3
 [filter "lfs"]
@@ -92,3 +90,5 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
+[include]
+	path = ~/.gitconfig-local
