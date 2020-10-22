@@ -12,6 +12,7 @@ base_plugins=(
     colorize
     extract
     git
+    gitfast
     git-flow-avh
     gnu-utils
     history
