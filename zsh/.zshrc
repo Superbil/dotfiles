@@ -5,7 +5,11 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="gentoo"
+if [[ -z "$INSIDE_EMACS" ]]; then
+    ZSH_THEME=gentoo
+else
+    ZSH_THEME=imajes
+fi
 COMPLETION_WAITING_DOTS="true"
 
 base_plugins=(
