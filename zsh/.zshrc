@@ -206,6 +206,10 @@ function _fortune_say() {
     fi
 }
 
+function ytdl-audio () {
+    mpv --no-video --ytdl-format=bestaudio $@
+}
+
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     _fortune_say
