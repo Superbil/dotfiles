@@ -1,4 +1,8 @@
 #!/usr/bin/env zsh
+
+# Disable oh-my-zsh auto update
+DISABLE_AUTO_UPDATE="true"
+
 # TRAMP mode
 # http://www.emacswiki.org/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
