@@ -4,7 +4,7 @@
 DISABLE_AUTO_UPDATE="true"
 
 # TRAMP mode
-# http://www.emacswiki.org/TrampMode
+# https://www.emacswiki.org/emacs/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
     unsetopt zle
     unsetopt prompt_cr
