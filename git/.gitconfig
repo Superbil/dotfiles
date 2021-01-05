@@ -85,5 +85,7 @@
 	pretty = fuller
 [merge]
 	conflictStyle = diff3
+[init]
+	defaultBranch = master
 [include]
 	path = ~/.gitconfig-local
