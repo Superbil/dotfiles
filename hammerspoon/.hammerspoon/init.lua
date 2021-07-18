@@ -71,7 +71,7 @@ hs.hotkey.bind(keys.ca, "o", function() pushGrid('4,0 7x2', primaryScreen) end)
 hs.hotkey.bind(keys.ca, "l", function() pushGrid('2,0 9x2', primaryScreen) end)
 
 -- Main
-hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.1,0.1,0.8,0.8) end)
+hs.hotkey.bind(keys.ca, ".", function() pushScreen(primaryScreen,0.15,0.1,0.7,0.8) end)
 
 -- East screen
 hs.hotkey.bind(keys.ca, "[", function() pushGrid('0,0 1x2', primaryScreen:toEast()) end)
