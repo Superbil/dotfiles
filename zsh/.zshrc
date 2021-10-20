@@ -61,6 +61,7 @@ darwin_plugins=(
     vagrant
     # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
     ibtool
+    fzf
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
