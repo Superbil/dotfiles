@@ -49,7 +49,7 @@ darwin_plugins=(
     # show time at prompt_char
     emoji-clock
     # useful for OS X
-    osx
+    macos
     # cocoapods
     pod
     # quickly to open project
