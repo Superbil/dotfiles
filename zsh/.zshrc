@@ -156,14 +156,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
     # Wifi Airport tool
     alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
-
-    function upgrade_homebrew() {
-        if [ -n $SSL_CERT_FILE ]; then
-            unset SSL_CERT_FILE
-        fi
-        # brew update && brew upgrade
-        brew upgrade
-    }
 fi
 
 # local script folder
