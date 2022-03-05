@@ -139,7 +139,6 @@ if (( $+commands[brew] )); then
     alias brew-emacs-debug='${brew-emacs} --args --debug-init'
 
     # Homebrew
-    alias bup='brew update && brew upgrade'
     alias bout='brew outdated'
     alias bin='brew install'
     alias brm='brew uninstall'
