@@ -32,6 +32,7 @@ for custom_plugin in $ZSH/custom/plugins/* ; do
 done
 
 langs_plugins=(
+    asdf
     # ruby
     gem
     rbenv
@@ -208,3 +209,7 @@ else
     # This will show at emacs with term-mode
     echo "Note: <C-c C-j> to line mode, <C-c C-k> to char mode"
 fi
+
+function asdf-upgradVersion () {
+    rm -f ~/.asdf/shims/* && asdf reshim
+}
