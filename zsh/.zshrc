@@ -35,7 +35,6 @@ langs_plugins=(
     asdf
     # ruby
     gem
-    rbenv
     # python
     pip
     pylint
