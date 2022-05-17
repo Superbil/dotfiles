@@ -202,6 +202,10 @@ function ytdl-audio () {
     mpv --no-video --ytdl-format=bestaudio $@
 }
 
+function asdf-upgradVersion () {
+    rm -f ~/.asdf/shims/* && asdf reshim
+}
+
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     _fortune_say
@@ -209,7 +213,3 @@ else
     # This will show at emacs with term-mode
     echo "Note: <C-c C-j> to line mode, <C-c C-k> to char mode"
 fi
-
-function asdf-upgradVersion () {
-    rm -f ~/.asdf/shims/* && asdf reshim
-}
