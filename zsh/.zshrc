@@ -182,6 +182,8 @@ function gi() { curl -sL http://www.gitignore.io/api/$@ ;}
 
 # Run on new shell
 function _fortune_say() {
+    [ ! -e $NO_COWSAY ] && return
+
     local fortune=$(which fortune)
     local cowsay=$(which cowsay)
     [ ! -e $fortune ] && return
