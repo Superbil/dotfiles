@@ -33,10 +33,24 @@ end
 -- hs.hotkey.bind(keys.cac, "b", function() toggleConsole() end)
 hs.hotkey.bind(keys.c, "escape", function() hs.grid.show() end)
 
--- iTunes
-hs.hotkey.bind(keys.c, "f3", function() hs.itunes.next() end)
-hs.hotkey.bind(keys.c, "f2", function() hs.itunes.playpause() end)
-hs.hotkey.bind(keys.c, "f1", function() hs.itunes.previous() end)
+-- System sound
+-- ref: https://github.com/Hammerspoon/hammerspoon/issues/1275#issuecomment-671112635
+local function sendSystemKey(key)
+    hs.eventtap.event.newSystemKeyEvent(key, true):post()
+    hs.eventtap.event.newSystemKeyEvent(key, false):post()
+end
+
+local systemKeys = {
+    up   = function() sendSystemKey("SOUND_UP") end,
+    down = function() sendSystemKey("SOUND_DOWN") end,
+    mute = function() sendSystemKey("MUTE") end,
+    next = function() sendSystemKey("NEXT") end,
+    previous = function() sendSystemKey("PREVIOUS") end,
+    play = function() sendSystemKey("PLAY") end,
+}
+hs.hotkey.bind(keys.c, "f2", systemKeys.play)
+hs.hotkey.bind(keys.c, "f3", systemKeys.next, nil, systemKeys.next)
+hs.hotkey.bind(keys.c, "f1", systemKeys.previous, nil, systemKeys.previous)
 
 -- core user modules
 require "imgur"
