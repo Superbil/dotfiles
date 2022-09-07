@@ -135,15 +135,6 @@ if (( $+commands[brew] )); then
     # Emacs on mac
     alias brew-emacs='open `brew --prefix emacs-mac`/Emacs.app'
     alias brew-emacs-debug='${brew-emacs} --args --debug-init'
-
-    # Homebrew
-    alias bout='brew outdated'
-    alias bin='brew install'
-    alias brm='brew uninstall'
-    alias bls='brew list'
-    alias bsr='brew search'
-    alias binf='brew info'
-    alias bdr='brew doctor'
 fi
 
 # Only for MacOS
