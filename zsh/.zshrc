@@ -168,7 +168,7 @@ function ips () {
 }
 
 # gitignore.io
-function gi() { curl -sL http://www.gitignore.io/api/$@ ;}
+function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
 
 function _fortune_say() {
     [ ! -e $NO_COWSAY ] && return
