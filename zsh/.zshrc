@@ -15,6 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 base_plugins=(
     colorize
     extract
+    fzf
     git
     gitfast
     git-flow-avh
@@ -59,7 +60,6 @@ darwin_plugins=(
     docker-compose
     # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
     ibtool
-    fzf
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
