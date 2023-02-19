@@ -123,7 +123,11 @@ alias svim='sudo vim'       # Run vim as super user
 alias -g C='| wc -l'
 alias -g EH='|& head'
 alias -g EL='|& less'
-alias -g G='| egrep --color=auto'
+if (( $+commands[rg] )); then
+    alias -g G='| rg'
+else
+    alias -g G='| egrep --color=auto'
+fi
 alias -g H='| head'
 alias -g HL='|& head -20'
 alias -g M='| more'
