@@ -54,10 +54,6 @@
 	# find tag TODO: BUG:
 	todo = grep TODO:
 	bug = grep BUG:
-	# becare to use this
-	undo = reset --hard
-	# diff stat with change
-	diffst = diff --stat -r
 	# start a server to use
 	server = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	# show user
