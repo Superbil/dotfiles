@@ -1,6 +1,5 @@
 [core]
 	pager = less -R
-	editor = emacsclient -c -a "vim"
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	quotepath = false
 	deltaBaseCacheLimit = 1G
