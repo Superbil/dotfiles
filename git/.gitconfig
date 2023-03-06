@@ -50,9 +50,10 @@
 	lola = log --graph --decorate --oneline --all
 	lld = log --graph --pretty=format:'%h %an ~ %s @ [%ad] [%cd]' --date=format:'%Y-%m-%d %H:%M'
 	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
-	# find tag TODO: BUG:
+	# find tag TODO: BUG: FIXME:
 	todo = grep TODO:
 	bug = grep BUG:
+	fixme = grep FIXME:
 	# start a server to use
 	server = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	# show user
