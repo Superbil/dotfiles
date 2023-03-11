@@ -16,6 +16,10 @@ if [[ "$TERM" == "dumb" ]]; then
         unfunction preexec
     fi
     PS1='$ '
+    # auto load local shell-env
+    if [[ -r $HOME/.emacs.d/shellenv ]]; then
+        source $HOME/.emacs.d/shellenv
+    fi
     return
 fi
 
