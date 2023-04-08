@@ -8,16 +8,6 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
-# coreutils
-BREW=/usr/local/bin/brew
-if [ -x $BREW ]; then
-    COREUTILS_PATH="$($BREW --prefix coreutils)"
-    if [ -x $COREUTILS_PATH ]; then
-        export PATH=$COREUTILS_PATH/libexec/gnubin:$PATH
-        export MANPATH=$COREUTILS_PATH/libexec/gnuman:$MANPATH
-    fi
-fi
-
 # system-wide environment settings for zsh(1)
 if [ -x "/usr/libexec/path_helper" ]; then
     eval `/usr/libexec/path_helper -s`
