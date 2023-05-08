@@ -167,26 +167,26 @@ function orgImage()
    end
 end
 
-orgTimeBar:setTitle(orgImage())
-orgTimeBar:setMenu({{
-         title = 'Invert behaviour', fn = nil
-}})
+-- orgTimeBar:setTitle(orgImage())
+-- orgTimeBar:setMenu({{
+--          title = 'Invert behaviour', fn = nil
+-- }})
 
-function updateOrgIcon()
-   orgTimeBar:setTitle(orgImage())
-end
+-- function updateOrgIcon()
+--    orgTimeBar:setTitle(orgImage())
+-- end
 
-function orgClockIn(eventName, params)
-   -- hs.printf(params['title'])
-   orgTimeState = true
-   updateOrgIcon()
-end
+-- function orgClockIn(eventName, params)
+--    -- hs.printf(params['title'])
+--    orgTimeState = true
+--    updateOrgIcon()
+-- end
 
-function orgClockOut(eventName, params)
-   -- hs.printf(params['title'])
-   orgTimeState = false
-   updateOrgIcon()
-end
+-- function orgClockOut(eventName, params)
+--    -- hs.printf(params['title'])
+--    orgTimeState = false
+--    updateOrgIcon()
+-- end
 
 hs.urlevent.bind('orgClockIn', orgClockIn)
 hs.urlevent.bind('orgClockOut', orgClockOut)
