@@ -6,6 +6,7 @@ DISABLE_AUTO_UPDATE="true"
 # TRAMP mode
 # https://www.emacswiki.org/emacs/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
+    unset zle_bracketed_paste
     unsetopt zle
     unsetopt prompt_cr
     unsetopt prompt_subst
