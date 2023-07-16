@@ -2,6 +2,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [[ "$TERM" == "dumb" ]]; then
+    unsetopt zle
+    return
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
