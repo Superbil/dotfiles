@@ -206,6 +206,16 @@ function asdf-upgradVersion () {
     rm -f ~/.asdf/shims/* && asdf reshim
 }
 
+function listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color ":$1"
+    else
+        echo "Usage: listening [pattern]"
+    fi
+}
+
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
     _fortune_say
