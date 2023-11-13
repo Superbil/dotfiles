@@ -65,6 +65,7 @@ darwin_plugins=(
     docker-compose
     # ibtool-gen, https://github.com/RudthMael/zsh-plugin-ibtool
     ibtool
+    emacs
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
