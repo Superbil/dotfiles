@@ -27,8 +27,9 @@ if (( $+commands[brew] )); then
 fi
 
 # Go
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin/:$PATH"
+if [ -x "$HOME/.go" ]; then
+    export GOPATH="$HOME/.go"
+fi
 
 # eliminates duplicates in *paths
 typeset -gU cdpath fpath path
@@ -38,6 +39,8 @@ ADD_PATHS=(
     /Applications/Postgres.app/Contents/Versions/9.3/bin
     # yarn
     '$HOME/.yarn/bin'
+    # go
+    '$GOPATH'
 )
 
 for p in $ADD_PATHS; do
