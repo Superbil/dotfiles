@@ -57,4 +57,5 @@ if (( $+commands[fzf] )); then
 --layout=reverse
 --prompt="(´・ω・`) "
 '
+    export FZF_DEFAULT_OPTS='--multi --layout=reverse'
 fi
