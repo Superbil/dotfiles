@@ -26,11 +26,6 @@ if (( $+commands[brew] )); then
     fi
 fi
 
-# Go
-if [ -x "$HOME/.go" ]; then
-    export GOPATH="$HOME/.go"
-fi
-
 # eliminates duplicates in *paths
 typeset -gU cdpath fpath path
 
