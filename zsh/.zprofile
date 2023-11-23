@@ -13,6 +13,11 @@ if [ -x "/usr/libexec/path_helper" ]; then
     eval `/usr/libexec/path_helper -s`
 fi
 
+# setup brew path for Apple M CPU
+if [ -e "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 if (( $+commands[brew] )); then
     # I use emacs-mac
     EC_PATH=$(brew --prefix emacs-mac)/bin/emacsclient
