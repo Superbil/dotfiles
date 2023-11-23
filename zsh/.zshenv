@@ -35,16 +35,6 @@ if [ -e "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if (( $+commands[fzf] )); then
-    export FZF_DEFAULT_OPTS='
---border
---multi
---header="(∩ ◕_▩ )⊃━☆ﾟExplosion！"
---layout=reverse
---prompt="(´・ω・`) "
-'
-fi
-
 # setup local env
 if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local

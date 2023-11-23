@@ -48,3 +48,13 @@ for p in $ADD_PATHS; do
         PATH=$p:$PATH
     fi
 done
+
+if (( $+commands[fzf] )); then
+    export FZF_DEFAULT_OPTS='
+--border
+--multi
+--header="(∩ ◕_▩ )⊃━☆ﾟExplosion！"
+--layout=reverse
+--prompt="(´・ω・`) "
+'
+fi
