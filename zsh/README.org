@@ -1,3 +1,13 @@
 * ZSH
 
 This zsh configure work with [[https://github.com/robbyrussell/oh-my-zsh][oh-my-zsh]].
+
+** Read order
+
+.zshenv →
+  .zshenv-local →
+.zprofile →
+.zshrc →
+  .zshrc-local →
+.zlogin →
+.zlogout
