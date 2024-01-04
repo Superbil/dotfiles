@@ -30,6 +30,9 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# python setup
+export PYTHONSTARTUP=$HOME/.pythonrc
+
 export HOMEBREW_NO_ENV_HINTS=1
 
 # setup local env

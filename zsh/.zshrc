@@ -95,9 +95,6 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
-# python setup
-export PYTHONSTARTUP=$HOME/.pythonrc
-
 # ignore history dupes
 setopt hist_ignore_dups
 # really ignore dupes
