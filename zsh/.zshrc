@@ -232,6 +232,8 @@ function load_pyenv() {
 if [[ -z "$INSIDE_EMACS" ]]; then
     _fortune_say
 else
-    # This will show at emacs with term-mode
-    echo "Note: <C-c C-j> to line mode, <C-c C-k> to char mode"
+    # This will show at emacs with term-mode, ignore vterm
+    if [[ $INSIDE_EMACS != *"vterm"* ]]; then
+        echo "Note: <C-c C-j> to line mode, <C-c C-k> to char mode"
+    fi
 fi
