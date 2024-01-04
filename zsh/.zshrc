@@ -177,9 +177,6 @@ function ips () {
     ifconfig | grep "inet " | awk '{ print $2 }'
 }
 
-# gitignore.io
-function gi() { curl -sL https://www.gitignore.io/api/$@ ;}
-
 function _fortune_say() {
     [ ! -e $NO_COWSAY ] && return
 
