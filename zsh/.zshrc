@@ -147,12 +147,6 @@ alias -g T='| tail'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
 
-if (( $+commands[brew] )); then
-    # Emacs on mac
-    alias brew-emacs='open `brew --prefix emacs-mac`/Emacs.app'
-    alias brew-emacs-debug='${brew-emacs} --args --debug-init'
-fi
-
 # Only for MacOS
 if [[ "$(uname -s)" == "Darwin" ]]; then
     # iCloud
