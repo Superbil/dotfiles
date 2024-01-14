@@ -36,6 +36,10 @@ for p in $ADD_PATHS; do
     fi
 done
 
+# Disable oh-my-zsh auto update
+DISABLE_AUTO_UPDATE="true"
+HOMEBREW_NO_ENV_HINTS=1
+
 if (( $+commands[fzf] )); then
     export FZF_DEFAULT_OPTS='
 --border

@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-# Disable oh-my-zsh auto update
-DISABLE_AUTO_UPDATE="true"
 
 # TRAMP mode
 # https://www.emacswiki.org/emacs/TrampMode
@@ -32,8 +30,6 @@ fi
 
 # python setup
 export PYTHONSTARTUP=$HOME/.pythonrc
-
-export HOMEBREW_NO_ENV_HINTS=1
 
 # setup local env
 if [[ -r $HOME/.zshenv-local ]]; then
