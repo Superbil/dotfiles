@@ -77,6 +77,12 @@ else
     plugins=($base_plugins $langs_plugins)
 fi
 
+for p in $ADD_PATHS; do
+    if [ -d $p ]; then
+        PATH=$p:$PATH
+    fi
+done
+
 source $ZSH/oh-my-zsh.sh
 
 # Setup prompt_char to a ghost (in shell).
@@ -155,9 +161,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     # Wifi Airport tool
     alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 fi
-
-# local script folder
-[ -d ${HOME}/bin ] && PATH=${HOME}/bin:$PATH
 
 # find ip
 function myip() {
