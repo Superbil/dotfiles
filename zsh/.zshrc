@@ -7,6 +7,9 @@ if [[ "$TERM" == "dumb" ]]; then
     return
 fi
 
+# eliminates duplicates in *paths
+typeset -gU cdpath fpath path
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 

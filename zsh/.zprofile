@@ -8,9 +8,6 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
-# eliminates duplicates in *paths
-typeset -gU cdpath fpath path
-
 # Some custom path for local
 ADD_PATHS=(
     /Applications/Postgres.app/Contents/Versions/9.3/bin
