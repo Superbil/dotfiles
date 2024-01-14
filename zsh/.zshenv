@@ -22,6 +22,16 @@ if [[ "$TERM" == "dumb" ]]; then
     return
 fi
 
+# system-wide environment settings for zsh(1)
+if [ -x "/usr/libexec/path_helper" ]; then
+    eval "$(/usr/libexec/path_helper -s)"
+fi
+
+# setup brew path for Apple M CPU
+if [ -e "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # https://github.com/sorin-ionescu/prezto/blob/master/runcoms/zshenv
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
