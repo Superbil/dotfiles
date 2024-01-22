@@ -17,8 +17,8 @@ ADD_PATHS=(
 )
 
 # Disable oh-my-zsh auto update
-DISABLE_AUTO_UPDATE="true"
-HOMEBREW_NO_ENV_HINTS=1
+DISABLE_AUTO_UPDATE=TRUE
+HOMEBREW_NO_ENV_HINTS=TRUE
 
 if (( $+commands[fzf] )); then
     export FZF_DEFAULT_OPTS='
