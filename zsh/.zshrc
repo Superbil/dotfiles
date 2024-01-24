@@ -77,12 +77,6 @@ else
     plugins=($base_plugins $langs_plugins)
 fi
 
-for p in $ADD_PATHS; do
-    if [ -d $p ]; then
-        PATH=$p:$PATH
-    fi
-done
-
 source $ZSH/oh-my-zsh.sh
 
 # Setup prompt_char to a ghost (in shell).

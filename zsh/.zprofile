@@ -7,15 +7,6 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
-# Some custom path for local
-ADD_PATHS=(
-    # yarn
-    '$HOME/.yarn/bin'
-    # go
-    '$GOPATH'
-    "${HOME}/bin"
-)
-
 # Disable oh-my-zsh auto update
 DISABLE_AUTO_UPDATE=TRUE
 HOMEBREW_NO_ENV_HINTS=TRUE

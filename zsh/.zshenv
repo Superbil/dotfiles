@@ -36,7 +36,22 @@ if [ -e "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+_ADD_PATHS=(
+    # yarn
+    '$HOME/.yarn/bin'
+    # go
+    '$GOPATH'
+    "${HOME}/bin"
+)
+
 # setup local env
 if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
 fi
+
+for p in $_ADD_PATHS; do
+    if [ -d $p ]; then
+        PATH=$p:$PATH
+    fi
+    unset _ADD_PATHS
+done
