@@ -215,3 +215,11 @@ function load_pyenv() {
         fi
     fi
 }
+
+function load_iterm2_shell() {
+    if [ -e "$HOME/.iterm2_shell_integration.zsh" ]; then
+        source "$HOME/.iterm2_shell_integration.zsh"
+    else
+        echo "No .iterm2_shell_integration.zsh to load"
+    fi
+}
