@@ -168,7 +168,7 @@ function ips () {
     ifconfig | grep "inet " | awk '{ print $2 }'
 }
 
-function _fortune_say() {
+function fortune_say() {
     [ ! -e $NO_COWSAY ] && return
 
     local fortune=$(which fortune)

@@ -11,8 +11,8 @@
 
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
-    if [[ -z $(type _fortune_say > /dev/null) ]]; then
-        _fortune_say
+    if [[ -z $(type fortune_say > /dev/null) ]]; then
+        fortune_say
     fi
 else
     # This will show at emacs with term-mode, ignore vterm
