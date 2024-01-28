@@ -16,7 +16,7 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     fi
 else
     # This will show at emacs with term-mode, ignore vterm
-    if [[ $INSIDE_EMACS != *"vterm"* ]]; then
+    if [[ ! $INSIDE_EMACS =~ "vterm" ]]; then
         echo "Note: <C-c C-j> to line mode, <C-c C-k> to char mode"
     fi
 fi
