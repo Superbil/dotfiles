@@ -39,8 +39,6 @@ fi
 _ADD_PATHS=(
     # yarn
     "$HOME/.yarn/bin"
-    # go
-    "$GOPATH"
     "${HOME}/bin"
 )
 
