@@ -8,8 +8,8 @@ if [[ -z "$LANG" ]]; then
 fi
 
 # Disable oh-my-zsh auto update
-DISABLE_AUTO_UPDATE=TRUE
-HOMEBREW_NO_ENV_HINTS=TRUE
+export DISABLE_AUTO_UPDATE=TRUE
+export HOMEBREW_NO_ENV_HINTS=TRUE
 
 if (( $+commands[fzf] )); then
     export FZF_DEFAULT_OPTS='
