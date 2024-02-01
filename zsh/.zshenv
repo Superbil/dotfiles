@@ -49,7 +49,7 @@ fi
 
 for p in $_ADD_PATHS; do
     if [ -d $p ]; then
-        PATH=$p:$PATH
+        export PATH=$p:$PATH
     fi
     unset _ADD_PATHS
 done
