@@ -11,7 +11,7 @@
 
 # Don't use fortune_say inside emacs
 if [[ -z "$INSIDE_EMACS" ]]; then
-    if [[ -z $(type fortune_say > /dev/null) ]]; then
+    if command -v fortune_say 1>/dev/null 2>&1; then
         fortune_say
     fi
 else
