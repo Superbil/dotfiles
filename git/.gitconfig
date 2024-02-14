@@ -82,5 +82,8 @@
 	conflictStyle = diff3
 [init]
 	defaultBranch = master
+[rerere]
+	enabled = true
+	autoUpdate = true
 [include]
 	path = ~/.gitconfig-local
