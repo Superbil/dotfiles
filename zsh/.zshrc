@@ -169,9 +169,11 @@ function exip () {
 
 function ips () {
     # determine local IP address
-    local ip_command=ip addr
+    local ip_command
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ip_command=ifconfig
+    else
+        ip_command=ip addr 
     fi
     ${ip_command} | grep "inet " | awk '{ print $2 }'
 }
