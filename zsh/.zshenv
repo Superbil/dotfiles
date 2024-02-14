@@ -55,5 +55,5 @@ for p in $_ADD_PATHS; do
     if [ -d $p ]; then
         export PATH=$p:$PATH
     fi
-    unset _ADD_PATHS
 done
+unset _ADD_PATHS
