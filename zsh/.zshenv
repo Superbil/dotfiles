@@ -41,6 +41,7 @@ export LANG=en_US.UTF-8
 _ADD_PATHS=(
     # yarn
     "${HOME}/.yarn/bin"
+    "${HOME}/.local/bin"
     "${HOME}/bin"
     "${HOME}/.orbstack/bin"
 )
