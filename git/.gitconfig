@@ -70,6 +70,7 @@
 [branch]
 	autosetupmerge = true
 	trustExitCode = true
+	sort = -committerdate
 [push]
 	default = tracking
 [rebase]
