@@ -169,13 +169,11 @@ function exip () {
 
 function ips () {
     # determine local IP address
-    local ip_command
     if [[ "$(uname -s)" == "Darwin" ]]; then
-        ip_command=ifconfig
+        ifconfig | grep "inet " | awk '{ print $2 }'
     else
-        ip_command=ip addr 
+        ip addr | grep "inet " | awk '{ print $2 }'
     fi
-    ${ip_command} | grep "inet " | awk '{ print $2 }'
 }
 
 function fortune_say() {
