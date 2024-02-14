@@ -67,6 +67,7 @@
 	fh = flow hotfix
 	fs = flow support
 	fv = flow version
+	fpush = push --force-with-lease
 [branch]
 	autosetupmerge = true
 	trustExitCode = true
