@@ -7,10 +7,6 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
-# Disable oh-my-zsh auto update
-export DISABLE_AUTO_UPDATE=TRUE
-export HOMEBREW_NO_ENV_HINTS=TRUE
-
 if (( $+commands[fzf] )); then
     export FZF_DEFAULT_OPTS='
 --border

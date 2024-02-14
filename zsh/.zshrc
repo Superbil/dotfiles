@@ -7,6 +7,10 @@ if [[ "$TERM" == "dumb" ]]; then
     return
 fi
 
+# Disable oh-my-zsh auto update
+export DISABLE_AUTO_UPDATE=TRUE
+export HOMEBREW_NO_ENV_HINTS=TRUE
+
 # eliminates duplicates in *paths
 typeset -gU cdpath fpath path
 
