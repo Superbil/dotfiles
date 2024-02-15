@@ -32,7 +32,7 @@ if [ -x "/usr/libexec/path_helper" ]; then
 fi
 
 # setup brew path for Apple M CPU
-if [ -e "/opt/homebrew/bin/brew" ]; then
+if [[ -e "/opt/homebrew/bin/brew" && $PATH =~ "/opt/homebrew/bin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
