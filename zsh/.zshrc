@@ -12,7 +12,7 @@ export DISABLE_AUTO_UPDATE=TRUE
 export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # eliminates duplicates in *paths
-typeset -gU cdpath fpath path
+typeset -gU cdpath
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
