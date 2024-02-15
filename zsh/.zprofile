@@ -7,13 +7,10 @@ if [[ -z "$LANG" ]]; then
     export LANGUAGE=en_US.UTF-8
 fi
 
-if (( $+commands[fzf] )); then
-    export FZF_DEFAULT_OPTS='
+export FZF_DEFAULT_OPTS='
 --border
 --multi
 --header="(∩ ◕_▩ )⊃━☆ﾟExplosion！"
 --layout=reverse
 --prompt="(´・ω・`) "
 '
-    export FZF_DEFAULT_OPTS='--multi --layout=reverse'
-fi
