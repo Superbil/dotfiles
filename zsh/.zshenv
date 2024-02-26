@@ -57,3 +57,8 @@ for p in $_ADD_PATHS; do
     fi
 done
 unset _ADD_PATHS
+
+# Disable oh-my-zsh auto update
+export DISABLE_AUTO_UPDATE=TRUE
+
+export HOMEBREW_NO_ENV_HINTS=TRUE
