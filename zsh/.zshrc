@@ -102,6 +102,9 @@ if [[ -z "$INSIDE_EMACS" ]]; then
     }
 fi
 
+# history length
+HISTSIZE=500000
+SAVEHIST=$HISTSIZE
 # ignore history dupes
 setopt hist_ignore_dups
 # really ignore dupes
