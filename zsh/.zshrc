@@ -105,6 +105,12 @@ fi
 # history length
 HISTSIZE=500000
 SAVEHIST=$HISTSIZE
+# Write to the history file immediately, not when the shell exits.
+setopt inc_append_history
+# Treat the '!' character specially during expansion.
+setopt bang_hist
+# Expire duplicate entries first when trimming history.
+setopt hist_expire_dups_first
 # ignore history dupes
 setopt hist_ignore_dups
 # really ignore dupes
@@ -118,6 +124,12 @@ setopt hist_save_no_dups
 setopt hist_ignore_space
 # ignore `history' and `fc' commands
 setopt hist_no_store
+# # Don't execute immediately upon history expansion.
+setopt hist_verify
+# Remove superfluous blanks before recording entry.
+setopt hist_reduce_blanks
+# Share history between all sessions.
+setopt share_history
 
 # setup local zshrc
 if [ -r $HOME/.zshrc-local ]; then
