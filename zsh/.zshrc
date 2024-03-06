@@ -40,6 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 
 base_plugins=(
     colorize
+    direnv
     extract
     fzf
     git
