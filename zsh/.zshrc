@@ -10,6 +10,7 @@ if [[ "$TERM" == "dumb" ]]; then
     unsetopt zle
     unsetopt prompt_cr
     unsetopt prompt_subst
+    # Inhibit loading of further config files
     unsetopt rcs
     if whence -w precmd >/dev/null; then
         unfunction precmd
