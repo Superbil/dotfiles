@@ -84,5 +84,10 @@
 	conflictStyle = diff3
 [init]
 	defaultBranch = master
+[pull]
+	rebase = false
+[diff]
+	renameLimit = 36648
+
 [include]
 	path = ~/.gitconfig-local
