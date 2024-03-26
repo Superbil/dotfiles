@@ -6,7 +6,8 @@
 # TRAMP mode
 # https://www.emacswiki.org/emacs/TrampMode
 if [[ "$TERM" == "dumb" ]]; then
-    unset zle_bracketed_paste
+    unset RPROMPT
+    unset RPS1
     unsetopt zle
     unsetopt prompt_cr
     unsetopt prompt_subst
@@ -18,6 +19,8 @@ if [[ "$TERM" == "dumb" ]]; then
     if whence -w preexec >/dev/null; then
         unfunction preexec
     fi
+    # fix enabled some kind of paste support
+    unset zle_bracketed_paste
     PS1='$ '
     return
 fi
