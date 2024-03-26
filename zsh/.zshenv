@@ -15,8 +15,6 @@ if [[ -e "/opt/homebrew/bin/brew" && ! ${PATH} =~ "/opt/homebrew/bin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-export LANG=en_US.UTF-8
-
 _ADD_PATHS=(
     # yarn
     "${HOME}/.yarn/bin"
