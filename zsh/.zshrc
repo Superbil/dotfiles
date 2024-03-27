@@ -21,7 +21,9 @@ if [[ "$TERM" == "dumb" ]]; then
     fi
     # fix enabled some kind of paste support
     unset zle_bracketed_paste
-    PS1='$ '
+
+    export LANG=en_US.UTF-8
+    export PS1='$ '
     return
 fi
 

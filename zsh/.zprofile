@@ -2,10 +2,7 @@
 # .zprofile
 # Executes commands at login before zshrc.
 #
-if [[ -z "$LANG" ]]; then
-    export LANG=en_US.UTF-8
-    export LANGUAGE=en_US.UTF-8
-fi
+export LANG=en_US.UTF-8
 
 export FZF_DEFAULT_OPTS='
 --border
