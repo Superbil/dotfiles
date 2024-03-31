@@ -11,3 +11,7 @@ This zsh configure work with [[https://github.com/robbyrussell/oh-my-zsh][oh-my-
   .zshrc-local →
 .zlogin →
 .zlogout
+
+** Reference
+
+- https://github.com/sorin-ionescu/prezto/tree/master/runcoms
