@@ -37,5 +37,6 @@ unset _ADD_PATHS
 
 # Disable oh-my-zsh auto update
 export DISABLE_AUTO_UPDATE=TRUE
+zstyle ':omz:update' mode disabled
 
 export HOMEBREW_NO_ENV_HINTS=TRUE
