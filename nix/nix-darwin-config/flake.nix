@@ -68,6 +68,14 @@
         # '';
 
         security.pam.enableSudoTouchIdAuth = true;
+
+        nix.extraOptions = ''
+          extra-platforms = x86_64-darwin aarch64-darwin
+        '';
+        # Setup use in vterm
+        ((emacsPackagesNgGen emacs).emacsWithPackages (epkgs: [
+          epkgs.vterm
+        ]))
       };
     in
       {
