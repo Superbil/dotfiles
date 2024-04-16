@@ -18,13 +18,14 @@
           pkgs.pipx
           # pkgs.asdf-vm
           pkgs.git
+          pkgs.git-lfs
+          pkgs.git-secret
           pkgs.gnused
           pkgs.coreutils
           # tools
           pkgs.unixtools.getopt
           pkgs.curl
           pkgs.fzf
-          pkgs.git-secret
           pkgs.gnugrep
           pkgs.gnutar
           pkgs.jq
