@@ -42,6 +42,6 @@ function pushScreen(screen, x, y, w, h)
 end
 
 function pushGrid(cell, screen)
-   local win = hs.window.focusedWindow()
-   hs.grid.set(win, cell, screen)
+  local win = hs.window.focusedWindow()
+  hs.grid.set(win, cell, screen)
 end
