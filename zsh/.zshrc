@@ -66,7 +66,6 @@ for custom_plugin in $ZSH/custom/plugins/* ; do
 done
 
 langs_plugins=(
-    asdf
     # ruby
     gem
     # python
@@ -229,10 +228,6 @@ function fortune_say() {
 
 function ytdl-audio () {
     mpv --no-video --ytdl-format=bestaudio $@
-}
-
-function asdf-upgradVersion () {
-    rm -f ~/.asdf/shims/* && asdf reshim
 }
 
 function listening() {
