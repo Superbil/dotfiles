@@ -87,3 +87,6 @@ proguard/
 TAGS
 
 local_dev/
+
+# mise
+mise.local.toml
