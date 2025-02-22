@@ -72,6 +72,7 @@ langs_plugins=(
     pip
     pylint
     python
+    poetry
     # javascript
     yarn
 )
