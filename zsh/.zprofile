@@ -4,10 +4,10 @@
 #
 export LANG=en_US.UTF-8
 
+# TODO: check tmux in ssh mode, then don't add  --tmux center
 export FZF_DEFAULT_OPTS='
 --border
 --multi
---tmux center
 --header="(∩ ◕_▩ )⊃━☆ﾟExplosion！"
 --layout=reverse
 --prompt="(´・ω・`) "
