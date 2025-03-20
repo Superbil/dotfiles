@@ -241,17 +241,6 @@ function listening() {
     fi
 }
 
-function load_pyenv() {
-    export PYENV_ROOT="${PYENV_ROOT:=$HOME/.pyenv}"
-    # Only run when pyenv existed
-    if [ -d $PYENV_ROOT/bin ]; then
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        if command -v pyenv 1>/dev/null 2>&1; then
-            eval "$(pyenv init -)"
-        fi
-    fi
-}
-
 function load_iterm2_shell() {
     if [ -e "$HOME/.iterm2_shell_integration.zsh" ]; then
         source "$HOME/.iterm2_shell_integration.zsh"
