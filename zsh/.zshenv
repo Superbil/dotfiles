@@ -30,9 +30,10 @@ fi
 
 for p in $_ADD_PATHS; do
     if [ -d $p ]; then
-        export PATH=$p:$PATH
+        path+=($p)
     fi
 done
+export PATH
 unset _ADD_PATHS
 
 # Disable oh-my-zsh auto update
