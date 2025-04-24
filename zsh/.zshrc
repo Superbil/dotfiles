@@ -181,9 +181,6 @@ alias -g X='| xargs'
 if [[ "$(uname -s)" == "Darwin" ]]; then
     # iCloud
     alias icloud='cd ~/Library/Mobile\ Documents/'
-
-    # Wifi Airport tool
-    alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 fi
 
 # find ip
