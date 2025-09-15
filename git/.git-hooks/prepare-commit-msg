@@ -1,6 +1,55 @@
-#!/bin/sh
+#!/usr/bin/env python3
+"""
+Git prepare-commit-msg hook
 
-case "$2,$3" in
-  *)
-    /usr/bin/perl -i.bak -ne 's/^/# /, s/^# #/#/ if /^_/ .. /#/; print' "$1" ;;
-esac
+This hook processes commit messages to add '# ' prefix to lines starting with '_'.
+This allows for temporary notes or reminders in commit messages that will be
+automatically commented out.
+
+Usage:
+    This script is automatically called by Git during the commit process.
+    Place it in .git/hooks/prepare-commit-msg and make it executable.
+
+Example:
+    Original commit message:
+        Add new feature
+        _TODO: update documentation
+        _FIXME: handle edge case
+
+    Processed commit message:
+        Add new feature
+        # _TODO: update documentation
+        # _FIXME: handle edge case
+"""
+
+import os
+import sys
+
+
+def process_commit_message(commit_msg_file):
+    """Process commit message file to add '# ' prefix to lines starting with '_'
+
+    Args:
+        commit_msg_file (str): Path to the commit message file
+    """
+    if not os.path.exists(commit_msg_file):
+        return
+
+    with open(commit_msg_file, 'r') as f:
+        lines = f.readlines()
+
+    modified = False
+    for i, line in enumerate(lines):
+        if line.startswith('_'):
+            lines[i] = '# ' + line
+            modified = True
+
+    if modified:
+        with open(commit_msg_file, 'w') as f:
+            f.writelines(lines)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        commit_msg_file = sys.argv[1]
+        process_commit_message(commit_msg_file)
