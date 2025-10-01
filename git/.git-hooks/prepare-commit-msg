@@ -2,9 +2,9 @@
 """
 Git prepare-commit-msg hook
 
-This hook processes commit messages to add '# ' prefix to lines starting with '_'.
-This allows for temporary notes or reminders in commit messages that will be
-automatically commented out.
+This hook processes commit messages to add '# ' prefix to lines starting with '_',
+except for the first line. This allows for temporary notes or reminders in commit
+messages that will be automatically commented out.
 
 Usage:
     This script is automatically called by Git during the commit process.
@@ -27,7 +27,8 @@ import sys
 
 
 def process_commit_message(commit_msg_file):
-    """Process commit message file to add '# ' prefix to lines starting with '_'
+    """Process commit message file to add '# ' prefix to lines starting with '_',
+    except for the first line.
 
     Args:
         commit_msg_file (str): Path to the commit message file
@@ -40,7 +41,7 @@ def process_commit_message(commit_msg_file):
 
     modified = False
     for i, line in enumerate(lines):
-        if line.startswith('_'):
+        if i > 0 and line.startswith('_'):
             lines[i] = '# ' + line
             modified = True
 
