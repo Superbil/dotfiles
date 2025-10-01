@@ -11,7 +11,7 @@ if [ -x "/usr/libexec/path_helper" ]; then
 fi
 
 # setup brew path for Apple M CPU
-if [[ -e "/opt/homebrew/bin/brew" && ! ${PATH} =~ "/opt/homebrew/bin" ]]; then
+if [[ -e "/opt/homebrew/bin/brew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -19,8 +19,8 @@ _ADD_PATHS=(
     # yarn
     "${HOME}/.yarn/bin"
     "${HOME}/.local/bin"
-    "${HOME}/bin"
     "${HOME}/.orbstack/bin"
+    "${HOME}/bin"
 )
 
 # setup local env
