@@ -148,6 +148,11 @@ setopt hist_reduce_blanks
 # Share history between all sessions.
 setopt share_history
 
+# Don't save command to history if command not found
+zshaddhistory() {
+    whence ${${(z)1}[1]} >| /dev/null || return 2
+}
+
 # setup local zshrc
 if [ -r $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
