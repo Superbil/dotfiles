@@ -15,6 +15,9 @@ if [[ -e "/opt/homebrew/bin/brew" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Ensure PATH is unique (removes duplicates)
+typeset -gU path
+
 _ADD_PATHS=(
     # yarn
     "${HOME}/.yarn/bin"
@@ -28,9 +31,11 @@ if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
 fi
 
+# Add paths in reverse order (since we prepend)
+# This ensures the first item in _ADD_PATHS appears first in PATH
 for p in $_ADD_PATHS; do
     if [ -d $p ]; then
-        path+=($p)
+        path=($p $path)
     fi
 done
 export PATH
