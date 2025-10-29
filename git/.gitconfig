@@ -91,3 +91,5 @@
 
 [include]
 	path = ~/.gitconfig-local
+[notes]
+	displayRef = refs/notes/commits
