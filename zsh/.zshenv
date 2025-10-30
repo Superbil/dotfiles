@@ -18,7 +18,21 @@ fi
 # Ensure PATH is unique (removes duplicates)
 typeset -gU path
 
+_prepend_paths_in_order() {
+    setopt localoptions noksharrays
+
+    local -a paths=("$@")
+    local dir_idx dir
+    for (( dir_idx=${#paths[@]}; dir_idx >= 1; dir_idx-- )); do
+        dir=${paths[dir_idx]}
+        [[ -d "$dir" ]] || continue
+        path=("$dir" ${path:#$dir})
+    done
+}
+
 _ADD_PATHS=(
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
     # yarn
     "${HOME}/.yarn/bin"
     "${HOME}/.local/bin"
@@ -31,13 +45,10 @@ if [[ -r $HOME/.zshenv-local ]]; then
     source $HOME/.zshenv-local
 fi
 
-# Add paths in reverse order (since we prepend)
-# This ensures the first item in _ADD_PATHS appears first in PATH
-for p in $_ADD_PATHS; do
-    if [ -d $p ]; then
-        path=($p $path)
-    fi
-done
+# Persist path priority for later reuse (e.g., in .zshrc)
+typeset -ga ZSH_PATH_PRIORITY=("${_ADD_PATHS[@]}")
+
+_prepend_paths_in_order "${ZSH_PATH_PRIORITY[@]}"
 export PATH
 unset _ADD_PATHS
 

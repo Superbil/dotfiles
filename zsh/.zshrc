@@ -158,6 +158,12 @@ if [ -r $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
 
+if (( ${+ZSH_PATH_PRIORITY} && ${#ZSH_PATH_PRIORITY[@]} )); then
+    typeset -gU path
+    _prepend_paths_in_order "${ZSH_PATH_PRIORITY[@]}"
+    export PATH
+fi
+
 # Aliases
 
 # Useful helpers
