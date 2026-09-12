@@ -70,9 +70,8 @@ langs_plugins=(
     gem
     # python
     pip
-    pylint
+    # pylint
     python
-    poetry
     # javascript
     yarn
 )
